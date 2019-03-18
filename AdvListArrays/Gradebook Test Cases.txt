@@ -17,154 +17,2868 @@ API Methods:
 
 Test Cases:
 ------------
-//can't add student w/o section
-	//repeat w/ other methods
-//create section but w/o students
-//can't create section w/ the same name as another one
-//create a second section w/o students
-//adds student to the current section
-//adds a second student to the same section(same name, different username)
-	//do for same first name, last name, and first and last names
-	//same phone number as well
-//adds a third student to the same section(different name, different username)
+//can't do other methods w/o section
 ***************************************************************************************
 changeSection
 ______________________________________________________________________________
 //change from section1 to section2
 Input:	      |Output:
+	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
 change section|
 	      |Enter Section Name:
 section2      |
 	      |Current Section: section2
+	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
 ______________________________________________________________________________
 //entered section not found
 Input:	      |Output:
+	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
 change section|
 	      |Enter Section Name:
 section3      |
 	      |Section not found.
+  	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
 ______________________________________________________________________________
 //section already active
 Input:	      |Output:
+	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
 change section|
 	      |Enter Section Name:
 section1      |
 	      |Section already active.
+	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
 ______________________________________________________________________________
 
 ***************************************************************************************
 createSections
 ______________________________________________________________________________
-Input:|Output:
+//add a new section
+Input:	   |Output:
+	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
 add section|
       	   |Enter new Section name:
-?     	   |
-           |?
+newSection |
+           |newSection has been added.
+	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+______________________________________________________________________________
+//can't add a new section with a name that is already taken
+Input:     |Output:
+	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add section|
+      	   |Enter new Section name:
+newSection |
+           |newSection is already added.
+           |Enter new Section name:
+newSection2|
+           |newSection2 has been added.
+	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+______________________________________________________________________________
+//can't add a 7th section
+Input:	   |Output:
+	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add section|
+      	   |Enter new Section name:
+section    |
+           |section has been added.
+	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add section|
+      	   |Enter new Section name:
+section1   |
+           |section1 has been added.
+	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add section|
+      	   |Enter new Section name:
+section2   |
+           |section2 has been added.
+	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add section|
+      	   |Enter new Section name:
+section3   |
+           |section3 has been added.
+	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add section|
+      	   |Enter new Section name:
+newSection |
+           |newSection has been added.
+	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add section|
+      	   |Enter new Section name:
+newSection1|
+           |newSection1 has been added.
+	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add section|
+      	   |Enter new Section name:
+newSection2|
+           |newSection2 cannot been added(There are already 6 sections added).
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
 ______________________________________________________________________________
 
+***************************************************************************************
 addStudents
 ______________________________________________________________________________
-Input|Output
-?    |
-     |?
-?    |
-     |?
+//can't add student w/o section
+Input	   |Output
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add student|
+     	   |Can't add student(There are 0 sections to add them to).
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
 ______________________________________________________________________________
-
+//adds student to the current section
+Input	    |Output
+      	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
+add student |
+     	    |Enter the Student's First Name:
+John 	    |
+     	    |Enter the Student's Last Name:
+Smith	    |
+     	    |Enter the Student's Username:
+JohnSmith123|
+            |Enter the Student's Phone Number:
+1234567890  |
+      	    |John Smith has been added to section1.
+      	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
+______________________________________________________________________________
+//adds a second student to the same section(same first name, different username)
+Input	   |Output
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add student|
+     	   |Enter the Student's First Name:
+John 	   |
+     	   |Enter the Student's Last Name:
+Johnson	   |
+     	   |Enter the Student's Username:
+JohnJ123   |
+           |Enter the Student's Phone Number:
+1234567891 |
+      	   |John Johnson has been added to section1.
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+______________________________________________________________________________
+//adds a third student to the same section(same last name, different username)
+Input	     |Output
+      	     |Type one of the following commands:
+	     |change section
+	     |add section
+	     |add student
+	     |add assignment to student
+	     |add assignment to section
+	     |set score
+	     |mark tardy
+	     |mark absent
+	     |get overall score
+	     |get overall score avg
+	     |get assignment score
+	     |get assignment score avg
+	     |get tardy count
+	     |get absent count
+add student  |
+     	     |Enter the Student's First Name:
+Steve 	     |
+     	     |Enter the Student's Last Name:
+Smith	     |
+     	     |Enter the Student's Username:
+SteveSmith123|
+             |Enter the Student's Phone Number:
+1234567892   |
+      	     |Steve Smith has been added to section1.
+      	     |Type one of the following commands:
+	     |change section
+	     |add section
+	     |add student
+	     |add assignment to student
+	     |add assignment to section
+	     |set score
+	     |mark tardy
+	     |mark absent
+	     |get overall score
+	     |get overall score avg
+	     |get assignment score
+	     |get assignment score avg
+	     |get tardy count
+	     |get absent count
+______________________________________________________________________________
+//adds a fourth student to the same section(same first and last name and phone number, different username)
+Input	    |Output
+      	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
+add student |
+     	    |Enter the Student's First Name:
+John 	    |
+     	    |Enter the Student's Last Name:
+Smith	    |
+     	    |Enter the Student's Username:
+JohnSmith234|
+            |Enter the Student's Phone Number:
+1234567890  |
+      	    |John Smith has been added to section1.
+      	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
+______________________________________________________________________________
+//adds a fifth student to the same section(same phone number, different username, and first and last names)
+Input	   |Output
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add student|
+     	   |Enter the Student's First Name:
+Steve 	   |
+     	   |Enter the Student's Last Name:
+Johnson	   |
+     	   |Enter the Student's Username:
+SteveJ234  |
+           |Enter the Student's Phone Number:
+1234567890 |
+      	   |Steve Johnson has been added to section1.
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+______________________________________________________________________________
+//adds a seventh student to the same section(different name, same username)
+Input	   |Output
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add student|
+     	   |Enter the Student's First Name:
+Joe 	   |
+     	   |Enter the Student's Last Name:
+Black	   |
+     	   |Enter the Student's Username:
+SteveJ234  |
+      	   |Username SteveJ234 is already used.
+     	   |Enter the Student's Username:
+JoeBlack234|
+           |Enter the Student's Phone Number:
+2345678901 |
+      	   |Joe Black has been added to section1.
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+______________________________________________________________________________
+//adds a eighth student to the same section(first name w/ numbers)
+Input	   |Output
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add student|
+     	   |Enter the Student's First Name:
+103 	   |
+	   |First Name can't include numbers.
+	   |Enter the Student's First Name:
+Red	   |
+	   |Enter the Student's Last Name:
+Black	   |
+     	   |Enter the Student's Username:
+RedBlack234|
+           |Enter the Student's Phone Number:
+3456789012 |
+      	   |Red Black has been added to section1.
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+______________________________________________________________________________
+//adds a ninth student to the same section(last name w/ numbers)
+Input	   |Output
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add student|
+	   |Enter the Student's First Name:
+Red	   |
+	   |Enter the Student's Last Name:
+81627	   |
+	   |Last Name can't include numbers.
+Black	   |
+     	   |Enter the Student's Username:
+RedBlack234|
+           |Enter the Student's Phone Number:
+4567890123 |
+      	   |Red Black has been added to section1.
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+______________________________________________________________________________
+//adds a tenth student to the same section(username w/ symbols)
+Input	     |Output
+      	     |Type one of the following commands:
+	     |change section
+	     |add section
+	     |add student
+	     |add assignment to student
+	     |add assignment to section
+	     |set score
+	     |mark tardy
+	     |mark absent
+	     |get overall score
+	     |get overall score avg
+	     |get assignment score
+	     |get assignment score avg
+	     |get tardy count
+	     |get absent count
+add student  |
+	     |Enter the Student's First Name:
+Red	     |
+	     |Enter the Student's Last Name:
+Black	     |
+     	     |Enter the Student's Username:
+RedBlack2_3+4|
+             |Enter the Student's Phone Number:
+5678901234   |
+      	     |Red Black has been added to section1.
+      	     |Type one of the following commands:
+	     |change section
+	     |add section
+	     |add student
+	     |add assignment to student
+	     |add assignment to section
+	     |set score
+	     |mark tardy
+	     |mark absent
+	     |get overall score
+	     |get overall score avg
+	     |get assignment score
+	     |get assignment score avg
+	     |get tardy count
+	     |get absent count
+______________________________________________________________________________
+//adds a eleventh student to the same section(phone number w/ words and symbols)
+Input	     |Output
+      	     |Type one of the following commands:
+	     |change section
+	     |add section
+	     |add student
+	     |add assignment to student
+	     |add assignment to section
+	     |set score
+	     |mark tardy
+	     |mark absent
+	     |get overall score
+	     |get overall score avg
+	     |get assignment score
+	     |get assignment score avg
+	     |get tardy count
+	     |get absent count
+add student  |
+	     |Enter the Student's First Name:
+Red	     |
+	     |Enter the Student's Last Name:
+81627	     |
+	     |Last Name can't include numbers.
+Black	     |
+     	     |Enter the Student's Username:
+RedBlack2_3+4|
+             |Enter the Student's Phone Number:
+sixty-seven  |
+	     |Phone Number can't include words and symbols.
+             |Enter the Student's Phone Number:
+6789012345   |
+      	     |Red Black has been added to section1.
+      	     |Type one of the following commands:
+	     |change section
+	     |add section
+	     |add student
+	     |add assignment to student
+	     |add assignment to section
+	     |set score
+	     |mark tardy
+	     |mark absent
+	     |get overall score
+	     |get overall score avg
+	     |get assignment score
+	     |get assignment score avg
+	     |get tardy count
+	     |get absent count
+______________________________________________________________________________
+//adds a twelfth student to the same section(phone number w/ less than 10 digits)
+Input	     |Output
+      	     |Type one of the following commands:
+	     |change section
+	     |add section
+	     |add student
+	     |add assignment to student
+	     |add assignment to section
+	     |set score
+	     |mark tardy
+	     |mark absent
+	     |get overall score
+	     |get overall score avg
+	     |get assignment score
+	     |get assignment score avg
+	     |get tardy count
+	     |get absent count
+add student  |
+	     |Enter the Student's First Name:
+Red	     |
+	     |Enter the Student's Last Name:
+Black	     |
+     	     |Enter the Student's Username:
+RedBlack2_3+4|
+             |Enter the Student's Phone Number:
+789012345    |
+	     |Phone Number can't have less than 10 digits.
+             |Enter the Student's Phone Number:
+7890123456   |
+      	     |Red Black has been added to section1.
+      	     |Type one of the following commands:
+	     |change section
+	     |add section
+	     |add student
+	     |add assignment to student
+	     |add assignment to section
+	     |set score
+	     |mark tardy
+	     |mark absent
+	     |get overall score
+	     |get overall score avg
+	     |get assignment score
+	     |get assignment score avg
+	     |get tardy count
+	     |get absent count
+______________________________________________________________________________
+//adds a thirteenth student to the same section(phone number w/ more than 10 digits)
+Input	     |Output
+      	     |Type one of the following commands:
+	     |change section
+	     |add section
+	     |add student
+	     |add assignment to student
+	     |add assignment to section
+	     |set score
+	     |mark tardy
+	     |mark absent
+	     |get overall score
+	     |get overall score avg
+	     |get assignment score
+	     |get assignment score avg
+	     |get tardy count
+	     |get absent count
+add student  |
+	     |Enter the Student's First Name:
+Red	     |
+	     |Enter the Student's Last Name:
+Black	     |
+     	     |Enter the Student's Username:
+RedBlack2_3+4|
+             |Enter the Student's Phone Number:
+89012345678  |
+	     |Phone Number can't have more than 10 digits.
+             |Enter the Student's Phone Number:
+8901234567   |
+      	     |Red Black has been added to section1.
+      	     |Type one of the following commands:
+	     |change section
+	     |add section
+	     |add student
+	     |add assignment to student
+	     |add assignment to section
+	     |set score
+	     |mark tardy
+	     |mark absent
+	     |get overall score
+	     |get overall score avg
+	     |get assignment score
+	     |get assignment score avg
+	     |get tardy count
+	     |get absent count
+______________________________________________________________________________
+//adds a fourteenth student to the same section(usernames w/o numbers and symbols)
+Input      |Output
+      	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+add student|
+	   |Enter the Student's First Name:
+Blue	   |
+	   |Enter the Student's Last Name:
+White	   |
+     	   |Enter the Student's Username:
+BlueWhite  |
+           |Enter the Student's Phone Number:
+9012345678 |
+      	   |Blue White has been added to section1.
+           |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+______________________________________________________________________________
+//adds a student to a different section
+Input	      |Output
+      	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
+change section|
+	      |Enter Section Name:
+section2      |
+	      |Current Section: section2
+add student   |
+	      |Enter the Student's First Name:
+Purple	      |
+	      |Enter the Student's Last Name:
+Grey	      |
+     	      |Enter the Student's Username:
+PurpleGrey246 |
+              |Enter the Student's Phone Number:
+9911335588    |
+      	      |Purple Grey has been added to section2.
+      	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
+______________________________________________________________________________
+***************************************************************************************
 getOverallScore
 ______________________________________________________________________________
-Input|Output
-?    |
-     |?
-?    |
-     |?
+//can't get overall score(no students)
+Input		 |Output
+      	      	 |Type one of the following commands:
+	      	 |change section
+	      	 |add section
+	      	 |add student
+	      	 |add assignment to student
+	      	 |add assignment to section
+	      	 |set score
+	      	 |mark tardy
+	      	 |mark absent
+	      	 |get overall score
+	      	 |get overall score avg
+	      	 |get assignment score
+	      	 |get assignment score avg
+	      	 |get tardy count
+	      	 |get absent count
+get overall score|
+	      	 |Can't get overall score(There are 0 students to search for).
+      	      	 |Type one of the following commands:
+	      	 |change section
+	      	 |add section
+	      	 |add student
+	      	 |add assignment to student
+	      	 |add assignment to section
+	      	 |set score
+	      	 |mark tardy
+	      	 |mark absent
+	      	 |get overall score
+	      	 |get overall score avg
+	      	 |get assignment score
+	      	 |get assignment score avg
+	      	 |get tardy count
+	      	 |get absent count
 ______________________________________________________________________________
-
+//get overall score
+Input		 |Output
+      	      	 |Type one of the following commands:
+	      	 |change section
+	      	 |add section
+	      	 |add student
+	      	 |add assignment to student
+	      	 |add assignment to section
+	      	 |set score
+	      	 |mark tardy
+	      	 |mark absent
+	      	 |get overall score
+	      	 |get overall score avg
+	      	 |get assignment score
+	      	 |get assignment score avg
+	      	 |get tardy count
+	      	 |get absent count
+get overall score|
+	      	 |Enter Student Username:
+JohnSmith123   	 |
+	      	 |John's Overall Score: 100%
+      	      	 |Type one of the following commands:
+	      	 |change section
+	      	 |add section
+	      	 |add student
+	      	 |add assignment to student
+	      	 |add assignment to section
+	      	 |set score
+	      	 |mark tardy
+	      	 |mark absent
+	      	 |get overall score
+	      	 |get overall score avg
+	      	 |get assignment score
+	      	 |get assignment score avg
+	      	 |get tardy count
+	      	 |get absent count
+______________________________________________________________________________
+//can't get overall score(username not found)
+Input		 |Output
+      	      	 |Type one of the following commands:
+	      	 |change section
+	      	 |add section
+	      	 |add student
+	      	 |add assignment to student
+	      	 |add assignment to section
+	      	 |set score
+	      	 |mark tardy
+	      	 |mark absent
+	      	 |get overall score
+	      	 |get overall score avg
+	      	 |get assignment score
+	      	 |get assignment score avg
+	      	 |get tardy count
+	      	 |get absent count
+get overall score|
+	      	 |Enter Student Username:
+JohnSmith121   	 |
+	      	 |Username not found.
+	      	 |Enter Student Username:
+JohnSmith123   	 |
+	      	 |John's Overall Score: 100%
+______________________________________________________________________________
+//can't get overall score(no assignments)
+Input		 |Output
+      	      	 |Type one of the following commands:
+	      	 |change section
+	      	 |add section
+	      	 |add student
+	      	 |add assignment to student
+	      	 |add assignment to section
+	      	 |set score
+	      	 |mark tardy
+	      	 |mark absent
+	      	 |get overall score
+	      	 |get overall score avg
+	      	 |get assignment score
+	      	 |get assignment score avg
+	      	 |get tardy count
+	      	 |get absent count
+get overall score|
+	      	 |Enter Student Username:
+JohnSmith123   	 |
+	      	 |Can't get overall score(There are 0 assignments to get the score from).
+      	      	 |Type one of the following commands:
+	      	 |change section
+	      	 |add section
+	      	 |add student
+	      	 |add assignment to student
+	      	 |add assignment to section
+	      	 |set score
+	      	 |mark tardy
+	      	 |mark absent
+	      	 |get overall score
+	      	 |get overall score avg
+	      	 |get assignment score
+	      	 |get assignment score avg
+	      	 |get tardy count
+	      	 |get absent count
+______________________________________________________________________________
+***************************************************************************************
 getOverallScoreAvg
 ______________________________________________________________________________
-Input|Output
-?    |
-     |?
-?    |
-     |?
+//can't get overall score average(no sections)
+Input		     |Output
+      	      	     |Type one of the following commands:
+	      	     |change section
+	      	     |add section
+	      	     |add student
+	      	     |add assignment to student
+	      	     |add assignment to section
+	      	     |set score
+	      	     |mark tardy
+	      	     |mark absent
+	      	     |get overall score
+	      	     |get overall score avg
+	      	     |get assignment score
+	      	     |get assignment score avg
+	      	     |get tardy count
+	      	     |get absent count
+get overall score avg|
+	      	     |Can't get overall score avg(There are 0 sections to search for).
+      	      	     |Type one of the following commands:
+	      	     |change section
+	      	     |add section
+	      	     |add student
+	      	     |add assignment to student
+	      	     |add assignment to section
+	      	     |set score
+	      	     |mark tardy
+	      	     |mark absent
+	      	     |get overall score
+	      	     |get overall score avg
+	      	     |get assignment score
+	      	     |get assignment score avg
+	      	     |get tardy count
+	      	     |get absent count
 ______________________________________________________________________________
-
+//can't get overall score average(no students)
+Input		     |Output
+      	      	     |Type one of the following commands:
+	      	     |change section
+	      	     |add section
+	      	     |add student
+	      	     |add assignment to student
+	      	     |add assignment to section
+	      	     |set score
+	      	     |mark tardy
+	      	     |mark absent
+	      	     |get overall score
+	      	     |get overall score avg
+	      	     |get assignment score
+	      	     |get assignment score avg
+	      	     |get tardy count
+	      	     |get absent count
+get overall score avg|
+		     |Enter Section Name:
+section1	     |
+	      	     |Can't get overall score avg(There are 0 students to get the score from).
+      	      	     |Type one of the following commands:
+	      	     |change section
+	      	     |add section
+	      	     |add student
+	      	     |add assignment to student
+	      	     |add assignment to section
+	      	     |set score
+	      	     |mark tardy
+	      	     |mark absent
+	      	     |get overall score
+	      	     |get overall score avg
+	      	     |get assignment score
+	      	     |get assignment score avg
+	      	     |get tardy count
+	      	     |get absent count
+______________________________________________________________________________
+//can't get overall score average(no section assignments)
+Input		     |Output
+      	      	     |Type one of the following commands:
+	      	     |change section
+	      	     |add section
+	      	     |add student
+	      	     |add assignment to student
+	      	     |add assignment to section
+	      	     |set score
+	      	     |mark tardy
+	      	     |mark absent
+	      	     |get overall score
+	      	     |get overall score avg
+	      	     |get assignment score
+	      	     |get assignment score avg
+	      	     |get tardy count
+	      	     |get absent count
+get overall score avg|
+		     |Enter Section Name:
+section1	     |
+	      	     |Can't get overall score avg(There are 0 assignments to get the score from).
+      	      	     |Type one of the following commands:
+	      	     |change section
+	      	     |add section
+	      	     |add student
+	      	     |add assignment to student
+	      	     |add assignment to section
+	      	     |set score
+	      	     |mark tardy
+	      	     |mark absent
+	      	     |get overall score
+	      	     |get overall score avg
+	      	     |get assignment score
+	      	     |get assignment score avg
+	      	     |get tardy count
+	      	     |get absent count
+______________________________________________________________________________
+//get overall score average
+Input		     |Output
+      	      	     |Type one of the following commands:
+	      	     |change section
+	      	     |add section
+	      	     |add student
+	      	     |add assignment to student
+	      	     |add assignment to section
+	      	     |set score
+	      	     |mark tardy
+	      	     |mark absent
+	      	     |get overall score
+	      	     |get overall score avg
+	      	     |get assignment score
+	      	     |get assignment score avg
+	      	     |get tardy count
+	      	     |get absent count
+get overall score avg|
+		     |Enter Section Name:
+section1	     |
+	      	     |Overall Score Avg: 96%
+      	      	     |Type one of the following commands:
+	      	     |change section
+	      	     |add section
+	      	     |add student
+	      	     |add assignment to student
+	      	     |add assignment to section
+	      	     |set score
+	      	     |mark tardy
+	      	     |mark absent
+	      	     |get overall score
+	      	     |get overall score avg
+	      	     |get assignment score
+	      	     |get assignment score avg
+	      	     |get tardy count
+	      	     |get absent count
+______________________________________________________________________________
+//can't get overall score average(invalid section name)
+Input		     |Output
+      	      	     |Type one of the following commands:
+	      	     |change section
+	      	     |add section
+	      	     |add student
+	      	     |add assignment to student
+	      	     |add assignment to section
+	      	     |set score
+	      	     |mark tardy
+	      	     |mark absent
+	      	     |get overall score
+	      	     |get overall score avg
+	      	     |get assignment score
+	      	     |get assignment score avg
+	      	     |get tardy count
+	      	     |get absent count
+get overall score avg|
+		     |Enter Section Name:
+section10	     |
+	      	     |Section10 not found.
+		     |Enter Section Name:
+section1	     |
+	      	     |Overall Score Avg: 96%
+      	      	     |Type one of the following commands:
+	      	     |change section
+	      	     |add section
+	      	     |add student
+	      	     |add assignment to student
+	      	     |add assignment to section
+	      	     |set score
+	      	     |mark tardy
+	      	     |mark absent
+	      	     |get overall score
+	      	     |get overall score avg
+	      	     |get assignment score
+	      	     |get assignment score avg
+	      	     |get tardy count
+	      	     |get absent count
+______________________________________________________________________________
+***************************************************************************************
 addAssignmentToStudent
 ______________________________________________________________________________
-Input|Output
-?    |
-     |?
-?    |
-     |?
+//add assignment to a specific student
+Input		     	 |Output
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+add assignment to student|
+		     	 |Enter Student Username:
+JohnSmith123		 |
+	      	     	 |Enter Assignment Name:
+TestCasesSheet		 |
+		     	 |Enter Max Amount of Points Possible:
+100	     		 |
+	      	     	 |JohnSmith123 has a new assignment: TestCasesSheet
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
 ______________________________________________________________________________
-
-checkStudentAssignments
+//can't add assignment(no students)
+Input		     	 |Output
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+add assignment to student|
+     	   		 |Can't add assignment(There are 0 students to add them to).
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
 ______________________________________________________________________________
-Input|Output
-?    |
-     |?
-?    |
-     |?
+//can't add assignment(student not found)
+Input		     	 |Output
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+add assignment to student|
+		     	 |Enter Student Username:
+JohnSmith121		 |
+		     	 |JohnSmith121 not found.
+		     	 |Enter Student Username:
+JohnSmith123		 |
+	      	     	 |Enter Assignment Name:
+TestCasesSheet		 |
+		     	 |Enter Max Amount of Points Possible:
+100	     		 |
+	      	     	 |JohnSmith123 has a new assignment: TestCasesSheet
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
 ______________________________________________________________________________
-
+//can't add assignment(words for points)
+Input		     	 |Output
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+add assignment to student|
+		     	 |Enter Student Username:
+JohnSmith123		 |
+	      	     	 |Enter Assignment Name:
+TestCasesSheet		 |
+		     	 |Enter Max Amount of Points Possible:
+one-hundred	     	 |
+			 |Invalid amount of points possible.
+		     	 |Enter Max Amount of Points Possible:
+100		     	 |
+	      	     	 |JohnSmith123 has a new assignment: TestCasesSheet
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+______________________________________________________________________________
+//can't add assignment(negative points)
+Input		     	 |Output
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+add assignment to student|
+		     	 |Enter Student Username:
+JohnSmith123		 |
+	      	     	 |Enter Assignment Name:
+TestCasesSheet		 |
+		     	 |Enter Max Amount of Points Possible:
+-100 		     	 |
+			 |Invalid amount of points possible.
+		     	 |Enter Max Amount of Points Possible:
+100		     	 |
+	      	     	 |JohnSmith123 has a new assignment: TestCasesSheet
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+______________________________________________________________________________
+***************************************************************************************
+addAssignmentToSection
+______________________________________________________________________________
+//add assignment to a specific section
+Input		     	 |Output
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+add assignment to section|
+		     	 |Enter Section Name:
+section1		 |
+	      	     	 |Enter Assignment Name:
+TestCasesSheet		 |
+		     	 |Enter Max Amount of Points Possible:
+100	     		 |
+	      	     	 |section1 has a new assignment: TestCasesSheet
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+______________________________________________________________________________
+//can't add assignment(no sections)
+Input		     	 |Output
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+add assignment to section|
+     	   		 |Can't add assignment(There are 0 sections to add them to).
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+______________________________________________________________________________
+//can't add assignment(section not found)
+Input		     	 |Output
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+add assignment to section|
+		     	 |Enter Section Name:
+section10		 |
+	      	     	 |section10 not found.
+		     	 |Enter Section Name:
+section1		 |
+	      	     	 |Enter Assignment Name:
+TestCasesSheet		 |
+		     	 |Enter Max Amount of Points Possible:
+100	     		 |
+	      	     	 |section1 has a new assignment: TestCasesSheet
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+______________________________________________________________________________
+//can't add assignment(words for points)
+Input		     	 |Output
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+add assignment to section|
+		     	 |Enter Section Name:
+section1		 |
+	      	     	 |Enter Assignment Name:
+TestCasesSheet		 |
+		     	 |Enter Max Amount of Points Possible:
+one-hundred	     	 |
+			 |Invalid amount of points possible.
+		     	 |Enter Max Amount of Points Possible:
+100	     		 |
+	      	     	 |section1 has a new assignment: TestCasesSheet
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+______________________________________________________________________________
+//can't add assignment(negative points)
+Input		     	 |Output
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+add assignment to section|
+		     	 |Enter Section Name:
+section1		 |
+	      	     	 |Enter Assignment Name:
+TestCasesSheet		 |
+		     	 |Enter Max Amount of Points Possible:
+-100 		     	 |
+			 |Invalid amount of points possible.
+		     	 |Enter Max Amount of Points Possible:
+100		     	 |
+	      	     	 |section1 has a new assignment: TestCasesSheet
+      	      	     	 |Type one of the following commands:
+	      	     	 |change section
+	      	     	 |add section
+	      	     	 |add student
+	      	     	 |add assignment to student
+	      	     	 |add assignment to section
+	      	     	 |set score
+	      	     	 |mark tardy
+	      	     	 |mark absent
+	      	     	 |get overall score
+	      	     	 |get overall score avg
+	      	     	 |get assignment score
+	      	     	 |get assignment score avg
+	      	     	 |get tardy count
+	      	     	 |get absent count
+______________________________________________________________________________
+***************************************************************************************
 setScore
 ______________________________________________________________________________
-Input|Output
-?    |
-     |?
-?    |
-     |?
+//set assignment score
+Input	      |Output
+	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
+set score     |
+	      |Enter Student Username:
+JohnSmith123  |
+	      |Enter Assignment Name:
+TestCasesSheet|
+	      |Enter Points Earned:
+90	      |
+	      |JohnSmith123's TestCasesSheet has been graded: 90/100
+	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
 ______________________________________________________________________________
-
+//can't set assignment score(no assignments)
+Input	    |Output
+	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
+set score   |
+	    |Enter Student Username:
+JohnSmith123|
+	    |JohnSmith123 has 0 assignments.
+	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
+______________________________________________________________________________
+//can't set assignment score(assignment not found)
+Input	       |Output
+	       |Type one of the following commands:
+	       |change section
+	       |add section
+	       |add student
+	       |add assignment to student
+	       |add assignment to section
+	       |set score
+	       |mark tardy
+	       |mark absent
+	       |get overall score
+	       |get overall score avg
+	       |get assignment score
+	       |get assignment score avg
+	       |get tardy count
+	       |get absent count
+set score      |
+	       |Enter Student Username:
+JohnSmith123   |
+	       |Enter Assignment Name:
+TestCasesSheet2|
+	       |TestCasesSheet2 not found.
+	       |Enter Assignment Name:
+TestCasesSheet |
+	       |Enter Points Earned:
+90	       |
+	       |JohnSmith123's TestCasesSheet has been graded: 90/100
+	       |Type one of the following commands:
+	       |change section
+	       |add section
+	       |add student
+	       |add assignment to student
+	       |add assignment to section
+	       |set score
+	       |mark tardy
+	       |mark absent
+	       |get overall score
+	       |get overall score avg
+	       |get assignment score
+	       |get assignment score avg
+	       |get tardy count
+	       |get absent count
+______________________________________________________________________________
+//can't set assignment score(words for score)
+Input	      |Output
+	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
+set score     |
+	      |Enter Student Username:
+JohnSmith123  |
+	      |Enter Assignment Name:
+TestCasesSheet|
+	      |Enter Points Earned:
+ninety	      |
+	      |Invalid amount of points earned.
+	      |Enter Points Earned:
+90	      |
+	      |JohnSmith123's TestCasesSheet has been graded: 90/100
+	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
+______________________________________________________________________________
+//can't set assignment score(negative score)
+Input	      |Output
+	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
+set score     |
+	      |Enter Student Username:
+JohnSmith123  |
+	      |Enter Assignment Name:
+TestCasesSheet|
+	      |Enter Points Earned:
+-100	      |
+	      |Invalid amount of points earned.
+	      |Enter Points Earned:
+90	      |
+	      |JohnSmith123's TestCasesSheet has been graded: 90/100
+	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
+______________________________________________________________________________
+***************************************************************************************
 getAssignmentScorePercent
 ______________________________________________________________________________
-Input|Output
-?    |
-     |?
-?    |
-     |?
+//get assignment score as a percent
+Input		    |Output
+		    |Type one of the following commands:
+		    |change section
+		    |add section
+		    |add student
+		    |add assignment to student
+		    |add assignment to section
+		    |set score
+		    |mark tardy
+		    |mark absent
+		    |get overall score
+		    |get overall score avg
+		    |get assignment score
+		    |get assignment score avg
+		    |get tardy count
+		    |get absent count
+get assignment score|
+		    |Enter Student Username:
+JohnSmith123	    |
+		    |Enter Assignment Name:
+TestCasesSheet      |
+		    |JohnSmith123's TestCasesSheet score: 90%
+		    |Type one of the following commands:
+		    |change section
+		    |add section
+		    |add student
+		    |add assignment to student
+		    |add assignment to section
+		    |set score
+		    |mark tardy
+		    |mark absent
+		    |get overall score
+		    |get overall score avg
+		    |get assignment score
+		    |get assignment score avg
+		    |get tardy count
+		    |get absent count
 ______________________________________________________________________________
-
+//can't get assignment score as a percent(no assignments)
+Input		    |Output
+		    |Type one of the following commands:
+		    |change section
+		    |add section
+		    |add student
+		    |add assignment to student
+		    |add assignment to section
+		    |set score
+		    |mark tardy
+		    |mark absent
+		    |get overall score
+		    |get overall score avg
+		    |get assignment score
+		    |get assignment score avg
+		    |get tardy count
+		    |get absent count
+get assignment score|
+		    |Enter Student Username:
+JohnSmith123	    |
+		    |Can't get assignment score(There are 0 assignments to get it from).
+		    |Type one of the following commands:
+		    |change section
+		    |add section
+		    |add student
+		    |add assignment to student
+		    |add assignment to section
+		    |set score
+		    |mark tardy
+		    |mark absent
+		    |get overall score
+		    |get overall score avg
+		    |get assignment score
+		    |get assignment score avg
+		    |get tardy count
+		    |get absent count
+______________________________________________________________________________
+//can't get assignment score as a percent(assignment not found)
+Input		    |Output
+		    |Type one of the following commands:
+		    |change section
+		    |add section
+		    |add student
+		    |add assignment to student
+		    |add assignment to section
+		    |set score
+		    |mark tardy
+		    |mark absent
+		    |get overall score
+		    |get overall score avg
+		    |get assignment score
+		    |get assignment score avg
+		    |get tardy count
+		    |get absent count
+get assignment score|
+		    |Enter Student Username:
+JohnSmith123        |
+		    |Enter Assignment Name:
+TestCasesSheet2     |
+		    |TestCasesSheet2 not found.
+		    |Enter Assignment Name:
+TestCasesSheet      |
+		    |JohnSmith123's TestCasesSheet score: 90%
+		    |Type one of the following commands:
+		    |change section
+		    |add section
+		    |add student
+		    |add assignment to student
+		    |add assignment to section
+		    |set score
+		    |mark tardy
+		    |mark absent
+		    |get overall score
+		    |get overall score avg
+		    |get assignment score
+		    |get assignment score avg
+		    |get tardy count
+		    |get absent count
+______________________________________________________________________________
+//can't get assignment score as a percent(assignment not scored)
+Input		    |Output
+		    |Type one of the following commands:
+		    |change section
+		    |add section
+		    |add student
+		    |add assignment to student
+		    |add assignment to section
+		    |set score
+		    |mark tardy
+		    |mark absent
+		    |get overall score
+		    |get overall score avg
+		    |get assignment score
+		    |get assignment score avg
+		    |get tardy count
+		    |get absent count
+get assignment score|
+		    |Enter Student Username:
+JohnSmith123        |
+		    |Enter Assignment Name:
+TestCasesSheet      |
+		    |JohnSmith123's TestCasesSheeet hasn't been scored.
+		    |Type one of the following commands:
+		    |change section
+		    |add section
+		    |add student
+		    |add assignment to student
+		    |add assignment to section
+		    |set score
+		    |mark tardy
+		    |mark absent
+		    |get overall score
+		    |get overall score avg
+		    |get assignment score
+		    |get assignment score avg
+		    |get tardy count
+		    |get absent count
+______________________________________________________________________________
+//can't get assignment score as a percent(no students)
+Input		    |Output
+		    |Type one of the following commands:
+		    |change section
+		    |add section
+		    |add student
+		    |add assignment to student
+		    |add assignment to section
+		    |set score
+		    |mark tardy
+		    |mark absent
+		    |get overall score
+		    |get overall score avg
+		    |get assignment score
+		    |get assignment score avg
+		    |get tardy count
+		    |get absent count
+get assignment score|
+		    |Can't get assignment score(There are 0 students to get it from).
+		    |Type one of the following commands:
+		    |change section
+		    |add section
+		    |add student
+		    |add assignment to student
+		    |add assignment to section
+		    |set score
+		    |mark tardy
+		    |mark absent
+		    |get overall score
+		    |get overall score avg
+		    |get assignment score
+		    |get assignment score avg
+		    |get tardy count
+		    |get absent count
+______________________________________________________________________________
+//can't get assignment score as a percent(student not found)
+Input		    |Output
+		    |Type one of the following commands:
+		    |change section
+		    |add section
+		    |add student
+		    |add assignment to student
+		    |add assignment to section
+		    |set score
+		    |mark tardy
+		    |mark absent
+		    |get overall score
+		    |get overall score avg
+		    |get assignment score
+		    |get assignment score avg
+		    |get tardy count
+		    |get absent count
+get assignment score|
+		    |Enter Student Username:
+JohnSmith121	    |
+		    |JohnSmith123 not found.
+		    |Enter Student Username:
+JohnSmith123	    |
+		    |Enter Assignment Name:
+TestCasesSheet	    |
+		    |JohnSmith123's TestCasesSheet score: 90%
+		    |Type one of the following commands:
+		    |change section
+		    |add section
+		    |add student
+		    |add assignment to student
+		    |add assignment to section
+		    |set score
+		    |mark tardy
+		    |mark absent
+		    |get overall score
+		    |get overall score avg
+		    |get assignment score
+		    |get assignment score avg
+		    |get tardy count
+		    |get absent count
+______________________________________________________________________________
+***************************************************************************************
 getAssignmentScoreAvg
 ______________________________________________________________________________
-Input|Output
-?    |
-     |?
-?    |
-     |?
+//get assignment score average of a section
+Input			|Output
+			|Type one of the following commands:
+			|change section
+			|add section
+			|add student
+			|add assignment to student
+			|add assignment to section
+			|set score
+			|mark tardy
+			|mark absent
+			|get overall score
+			|get overall score avg
+			|get assignment score
+			|get assignment score avg
+			|get tardy count
+			|get absent count
+get assignment score avg|
+			|Enter Section Name:
+section1		|
+			|Enter Assignment Name:
+TestCasesSheet		|
+			|section1's average TestCasesSheet score: 98%
+			|Type one of the following commands:
+			|change section
+			|add section
+			|add student
+			|add assignment to student
+			|add assignment to section
+			|set score
+			|mark tardy
+			|mark absent
+			|get overall score
+			|get overall score avg
+			|get assignment score
+			|get assignment score avg
+			|get tardy count
+			|get absent count
 ______________________________________________________________________________
-
+//can't get assignment score average of a section(no assignments)
+Input			|Output
+			|Type one of the following commands:
+			|change section
+			|add section
+			|add student
+			|add assignment to student
+			|add assignment to section
+			|set score
+			|mark tardy
+			|mark absent
+			|get overall score
+			|get overall score avg
+			|get assignment score
+			|get assignment score avg
+			|get tardy count
+			|get absent count
+get assignment score avg|
+			|Enter Section Name:
+section1		|
+			|Can't get average assignment score(There are 0 assignments to get it from).
+			|Type one of the following commands:
+			|change section
+			|add section
+			|add student
+			|add assignment to student
+			|add assignment to section
+			|set score
+			|mark tardy
+			|mark absent
+			|get overall score
+			|get overall score avg
+			|get assignment score
+			|get assignment score avg
+			|get tardy count
+			|get absent count
+______________________________________________________________________________
+//can't get assignment score average of a section(assignment not found)
+Input			|Output
+			|Type one of the following commands:
+			|change section
+			|add section
+			|add student
+			|add assignment to student
+			|add assignment to section
+			|set score
+			|mark tardy
+			|mark absent
+			|get overall score
+			|get overall score avg
+			|get assignment score
+			|get assignment score avg
+			|get tardy count
+			|get absent count
+get assignment score avg|
+			|Enter Section Name:
+section1		|
+			|Enter Assignment Name:
+TestCasesSheet2		|
+			|TestCasesSheet2 not found.
+			|Enter Assignment Name:
+TestCasesSheet		|
+			|section1's average TestCasesSheet score: 98%
+			|Type one of the following commands:
+			|change section
+			|add section
+			|add student
+			|add assignment to student
+			|add assignment to section
+			|set score
+			|mark tardy
+			|mark absent
+			|get overall score
+			|get overall score avg
+			|get assignment score
+			|get assignment score avg
+			|get tardy count
+			|get absent count
+______________________________________________________________________________
+//can't get assignment score average of a section(assignment not scored)
+Input			|Output
+			|Type one of the following commands:
+			|change section
+			|add section
+			|add student
+			|add assignment to student
+			|add assignment to section
+			|set score
+			|mark tardy
+			|mark absent
+			|get overall score
+			|get overall score avg
+			|get assignment score
+			|get assignment score avg
+			|get tardy count
+			|get absent count
+get assignment score avg|
+			|Enter Section Name:
+section1		|
+			|Enter Assignment Name:
+TestCasesSheet		|
+			|section1's TestCasesSheet hasn't been scored.
+			|Type one of the following commands:
+			|change section
+			|add section
+			|add student
+			|add assignment to student
+			|add assignment to section
+			|set score
+			|mark tardy
+			|mark absent
+			|get overall score
+			|get overall score avg
+			|get assignment score
+			|get assignment score avg
+			|get tardy count
+			|get absent count
+______________________________________________________________________________
+//can't get assignment score average of a section(no sections)
+Input			|Output
+			|Type one of the following commands:
+			|change section
+			|add section
+			|add student
+			|add assignment to student
+			|add assignment to section
+			|set score
+			|mark tardy
+			|mark absent
+			|get overall score
+			|get overall score avg
+			|get assignment score
+			|get assignment score avg
+			|get tardy count
+			|get absent count
+get assignment score avg|
+			|Can't get  average assignment score(There are 0 sections to get it from).
+			|Type one of the following commands:
+			|change section
+			|add section
+			|add student
+			|add assignment to student
+			|add assignment to section
+			|set score
+			|mark tardy
+			|mark absent
+			|get overall score
+			|get overall score avg
+			|get assignment score
+			|get assignment score avg
+			|get tardy count
+			|get absent count
+______________________________________________________________________________
+***************************************************************************************
 markTardy
 ______________________________________________________________________________
-Input|Output
-?    |
-     |?
-?    |
-     |?
+//mark the student tardy
+Input	    |Output
+	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
+mark tardy  |
+	    |Enter Student Username:
+JohnSmith123|
+	    |JohnSmith123 has been marked tardy.
+	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
 ______________________________________________________________________________
-
+//can't mark tardy(no students)
+Input	  |Output
+	  |Type one of the following commands:
+	  |change section
+	  |add section
+	  |add student
+	  |add assignment to student
+	  |add assignment to section
+	  |set score
+	  |mark tardy
+	  |mark absent
+	  |get overall score
+	  |get overall score avg
+	  |get assignment score
+	  |get assignment score avg
+	  |get tardy count
+	  |get absent count
+mark tardy|
+	  |Can't mark a student tardy(There are 0 students to add it to).
+	  |Type one of the following commands:
+	  |change section
+	  |add section
+	  |add student
+	  |add assignment to student
+	  |add assignment to section
+	  |set score
+	  |mark tardy
+	  |mark absent
+	  |get overall score
+	  |get overall score avg
+	  |get assignment score
+	  |get assignment score avg
+	  |get tardy count
+	  |get absent count
+______________________________________________________________________________
+//can't mark tardy(student not found)
+Input	    |Output
+	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
+mark tardy  |
+	    |Enter Student Username:
+JohnSmith121|
+	    |JohnSmith121 not found.
+	    |Enter Student Username:
+JohnSmith123|
+	    |JohnSmith123 has been marked tardy.
+	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
+______________________________________________________________________________
+***************************************************************************************
 markAbsent
 ______________________________________________________________________________
-Input|Output
-?    |
-     |?
-?    |
-     |?
+//mark the student absent
+Input	    |Output
+	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
+mark absent |
+	    |Enter Student Username:
+JohnSmith123|
+	    |JohnSmith123 has been marked absent.
+	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
 ______________________________________________________________________________
-
+//can't mark absent(no students)
+Input      |Output
+	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+mark absent|
+	   |Can't mark a student absent(There are 0 students to add it to).
+	   |Type one of the following commands:
+	   |change section
+	   |add section
+	   |add student
+	   |add assignment to student
+	   |add assignment to section
+	   |set score
+	   |mark tardy
+	   |mark absent
+	   |get overall score
+	   |get overall score avg
+	   |get assignment score
+	   |get assignment score avg
+	   |get tardy count
+	   |get absent count
+______________________________________________________________________________
+//can't mark absent(student not found)
+Input	    |Output
+	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
+mark absent |
+	    |Enter Student Username:
+JohnSmith121|
+	    |JohnSmith121 not found.
+	    |Enter Student Username:
+JohnSmith123|
+	    |JohnSmith123 has been marked absent.
+	    |Type one of the following commands:
+	    |change section
+	    |add section
+	    |add student
+	    |add assignment to student
+	    |add assignment to section
+	    |set score
+	    |mark tardy
+	    |mark absent
+	    |get overall score
+	    |get overall score avg
+	    |get assignment score
+	    |get assignment score avg
+	    |get tardy count
+	    |get absent count
+______________________________________________________________________________
+***************************************************************************************
 getTardyCount
 ______________________________________________________________________________
-Input|Output
-?    |
-     |?
-?    |
-     |?
+//get the student's tardy count
+Input	       |Output
+	       |Type one of the following commands:
+	       |change section
+	       |add section
+	       |add student
+	       |add assignment to student
+	       |add assignment to section
+	       |set score
+	       |mark tardy
+	       |mark absent
+	       |get overall score
+	       |get overall score avg
+	       |get assignment score
+	       |get assignment score avg
+	       |get tardy count
+	       |get absent count
+get tardy count|
+	       |Enter Student Username:
+JohnSmith123   |
+	       |JohnSmith123's tardy count: 1
+	       |Type one of the following commands:
+	       |change section
+	       |add section
+	       |add student
+	       |add assignment to student
+	       |add assignment to section
+	       |set score
+	       |mark tardy
+	       |mark absent
+	       |get overall score
+	       |get overall score avg
+	       |get assignment score
+	       |get assignment score avg
+	       |get tardy count
+	       |get absent count
 ______________________________________________________________________________
-
+//can't get tardy count(no students)
+Input	       |Output
+	       |Type one of the following commands:
+	       |change section
+	       |add section
+	       |add student
+	       |add assignment to student
+	       |add assignment to section
+	       |set score
+	       |mark tardy
+	       |mark absent
+	       |get overall score
+	       |get overall score avg
+	       |get assignment score
+	       |get assignment score avg
+	       |get tardy count
+	       |get absent count
+get tardy count|
+	       |Can't get a student's tardy count(There are 0 students to get it from).
+	       |Type one of the following commands:
+	       |change section
+	       |add section
+	       |add student
+	       |add assignment to student
+	       |add assignment to section
+	       |set score
+	       |mark tardy
+	       |mark absent
+	       |get overall score
+	       |get overall score avg
+	       |get assignment score
+	       |get assignment score avg
+	       |get tardy count
+	       |get absent count
+______________________________________________________________________________
+//can't get tardy count(student not found)
+Input	       |Output
+	       |Type one of the following commands:
+	       |change section
+	       |add section
+	       |add student
+	       |add assignment to student
+	       |add assignment to section
+	       |set score
+	       |mark tardy
+	       |mark absent
+	       |get overall score
+	       |get overall score avg
+	       |get assignment score
+	       |get assignment score avg
+	       |get tardy count
+	       |get absent count
+get tardy count|
+	       |Enter Student Username:
+JohnSmith121   |
+	       |JohnSmith121 not found.
+	       |Enter Student Username:
+JohnSmith123   |
+	       |JohnSmith123's tardy count: 1
+	       |Type one of the following commands:
+	       |change section
+	       |add section
+	       |add student
+	       |add assignment to student
+	       |add assignment to section
+	       |set score
+	       |mark tardy
+	       |mark absent
+	       |get overall score
+	       |get overall score avg
+	       |get assignment score
+	       |get assignment score avg
+	       |get tardy count
+	       |get absent count
+______________________________________________________________________________
+***************************************************************************************
 getAbsentCount
 ______________________________________________________________________________
-Input|Output
-?    |
-     |?
-?    |
-     |?
+//get the student's absent count
+Input		|Output
+		|Type one of the following commands:
+		|change section
+		|add section
+		|add student
+		|add assignment to student
+		|add assignment to section
+		|set score
+		|mark tardy
+		|mark absent
+		|get overall score
+		|get overall score avg
+		|get assignment score
+		|get assignment score avg
+		|get tardy count
+		|get absent count
+get absent count|
+		|Enter Student Username:
+JohnSmith123	|
+		|JohnSmith123's absent count: 1
+		|Type one of the following commands:
+		|change section
+		|add section
+		|add student
+		|add assignment to student
+		|add assignment to section
+		|set score
+		|mark tardy
+		|mark absent
+		|get overall score
+		|get overall score avg
+		|get assignment score
+		|get assignment score avg
+		|get tardy count
+		|get absent count
+______________________________________________________________________________
+//can't get absent count(no students)
+Input		|Output
+		|Type one of the following commands:
+		|change section
+		|add section
+		|add student
+		|add assignment to student
+		|add assignment to section
+		|set score
+		|mark tardy
+		|mark absent
+		|get overall score
+		|get overall score avg
+		|get assignment score
+		|get assignment score avg
+		|get tardy count
+		|get absent count
+get absent count|
+		|Can't get a student's absent count(There are 0 students to get it from).
+		|Type one of the following commands:
+		|change section
+		|add section
+		|add student
+		|add assignment to student
+		|add assignment to section
+		|set score
+		|mark tardy
+		|mark absent
+		|get overall score
+		|get overall score avg
+		|get assignment score
+		|get assignment score avg
+		|get tardy count
+		|get absent count
+______________________________________________________________________________
+//can't get absent count(student not found)
+Input		|Output
+		|Type one of the following commands:
+		|change section
+		|add section
+		|add student
+		|add assignment to student
+		|add assignment to section
+		|set score
+		|mark tardy
+		|mark absent
+		|get overall score
+		|get overall score avg
+		|get assignment score
+		|get assignment score avg
+		|get tardy count
+		|get absent count
+get absent count|
+		|Enter Student Username:
+JohnSmith121	|
+		|JohnSmith121 not found.
+		|Enter Student Username:
+JohnSmith123	|
+		|JohnSmith123's absent count: 1
+		|Type one of the following commands:
+		|change section
+		|add section
+		|add student
+		|add assignment to student
+		|add assignment to section
+		|set score
+		|mark tardy
+		|mark absent
+		|get overall score
+		|get overall score avg
+		|get assignment score
+		|get assignment score avg
+		|get tardy count
+		|get absent count
+______________________________________________________________________________
+***************************************************************************************
