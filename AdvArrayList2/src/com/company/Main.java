@@ -39,10 +39,27 @@ public class Main {
                 String searchedUsername = console.nextLine();
                 System.out.println("Enter Password:");//ask for a password
                 String searchedPassword = console.nextLine();
-                int usernamesIndex = usernames.indexOf(searchedUsername);
-                int passwordsIndex = passwords.indexOf(searchedPassword);
                 if (usernames.contains(searchedUsername) && passwords.contains(searchedPassword)) {//see if there is an account that matches the credentials.
-                    if (usernamesIndex == passwordsIndex) {//If it matches...
+                    int usernameIndex = usernames.indexOf(searchedUsername);
+                    int match = 0;
+                    int currentIndex = passwords.indexOf(searchedPassword);
+                    while (true){
+                        if (currentIndex == usernameIndex){//see if searchedPassword's index is the same as the username's index
+                            if (searchedPassword == passwords.get(currentIndex)) {
+                                match = 1;
+                                break;
+                            }
+                            else {
+                                break;
+                                ------------------------------------------------------------------------------ //Test to see if Users with same pass works now
+                            }
+                        }
+                        else{//if not...
+                            currentIndex++;
+                            continue;
+                        }
+                    }
+                    if (match == 1) {//If it matches...
                         System.out.println("Welcome, " + searchedUsername + "!");//print "Welcome, " + username + "!"
                         System.exit(0);//close the program
                     }
