@@ -13,8 +13,8 @@ public class Main {
         //Your program needs to do the following:
 
         Scanner console = new Scanner(System.in);
-        ArrayList usernames = new ArrayList();
-        ArrayList passwords = new ArrayList();
+        ArrayList<String> usernames = new ArrayList<>();
+        ArrayList<String> passwords = new ArrayList<>();
         while (true) {
             System.out.println("Would you like to (create account) or (login)?");//Ask the user if they want to "create account" or "login"
             String userInput = console.nextLine();
@@ -40,33 +40,24 @@ public class Main {
                 System.out.println("Enter Password:");//ask for a password
                 String searchedPassword = console.nextLine();
                 if (usernames.contains(searchedUsername) && passwords.contains(searchedPassword)) {//see if there is an account that matches the credentials.
+                    int k=0;
                     int usernameIndex = usernames.indexOf(searchedUsername);
-                    int match = 0;
-                    int currentIndex = passwords.indexOf(searchedPassword);
-                    while (true){
-                        if (currentIndex == usernameIndex){//see if searchedPassword's index is the same as the username's index
-                            if (searchedPassword == passwords.get(currentIndex)) {
-                                match = 1;
-                                break;
-                            }
-                            else {
-                                break;
-                                ------------------------------------------------------------------------------ //Test to see if Users with same pass works now
+                    while (k<usernames.size()){
+                        if (usernameIndex == k){//if the k is the same index as the username
+                            String foundPass = passwords.get(k);//find the password with an index of k
+                            if (foundPass.equals(searchedPassword)){//If it matches...
+                                System.out.println("Welcome, " + searchedUsername + "!");//print "Welcome, " + username + "!"
+                                System.exit(0);//close the program
                             }
                         }
-                        else{//if not...
-                            currentIndex++;
+                        else{
+                            k=k+1;
                             continue;
                         }
                     }
-                    if (match == 1) {//If it matches...
-                        System.out.println("Welcome, " + searchedUsername + "!");//print "Welcome, " + username + "!"
-                        System.exit(0);//close the program
-                    }
-                    else {//If it does not match...
-                        System.out.println("Sorry, account doesn't match records.");//print "sorry account does not match records"
-                        continue;//return to asking if they would like to "create an account" or "login"
-                    }
+                    //If it does not match...
+                    System.out.println("Sorry, account doesn't match records.");//print "sorry account does not match records"
+                    continue;//return to asking if they would like to "create an account" or "login"
                 }
                 else {//If it does not match...
                     System.out.println("Sorry, account doesn't match records.");//print "sorry account does not match records"
