@@ -30,4 +30,65 @@ public class Sections {
         public String getSectionName() {
             return sectionName;
         }
+        public boolean addStudent(String firstName, String lastName, String username, long phoneNumber){
+            int studentIndex = getStudentIndexByUsername(username);
+            if (studentIndex !=-1) {//if username exists...
+                return false;//return false
+            }
+            else {//else...
+                Students.add(new Students(firstName, lastName, username, phoneNumber));//create new student and add to students list
+                return true;//return true
+            }
+        }
+        public boolean markTardy(String username){
+            Students currStudent = getCurrentStudent(username);//get the student specified by username
+            if(currStudent == null) {//if student not found...
+                return false;//return false
+            }
+            else {//else...
+                currStudent.markTardy();//add 1 to the specified student's tardy count(mark as tardy)
+                return true;//return true
+            }
+        }
+        public boolean markAbsent(String username){
+            Students currStudent = getCurrentStudent(username);//get the student specified by username
+            if(currStudent == null) {//if student not found...
+                return false;//return false
+            }
+            else {//else...
+                currStudent.markAbsent();//add 1 to the specified student's absent count(mark as absent)
+                return true;//return true
+            }
+        }
+        int getTardyCount(String username){//returns number of times student was tardy
+            Students currStudent = getCurrentStudent(username);//get the student specified by username
+            if(currStudent == null) {//if student not found...
+                int tardyCount = -1;
+                return tardyCount;//return tardyCount
+            }
+            else {//else...
+                int tardyCount = currStudent.getDaysTardy();//get the specified student's tardy count
+                return tardyCount;
+            }
+        }
+        private int getStudentIndexByUsername(String username){//search if given username is used already
+            int index = 0;
+            while (index < Students.size()){
+                if (username.equalsIgnoreCase(Students.get(index).getUsername())){//if a student is found with the given username...
+                    return index;//return the found index
+                }
+                index++;
+            }
+            //if no student found with the given username...
+            return -1;//return -1
+        }
+    private Students getCurrentStudent(String username) {//get current student
+        int index = getStudentIndexByUsername(username);//get student index
+        if(index == -1) {//if index == -1...
+            return null;//return null
+        }
+        else {//else...
+            return Students.get(index);//return student at that index
+        }
+    }
 }

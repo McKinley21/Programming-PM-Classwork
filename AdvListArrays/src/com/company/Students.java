@@ -1,5 +1,6 @@
 package com.company;
 
+
 import java.util.ArrayList;
 
 /**
@@ -16,20 +17,27 @@ public class Students {
         private int daysAbsent;//daysAbsent (int)
         private int daysTardy;//daysTardy (int)
     //Constructors:
-        public Students(String firstName, String lastName, String username, long phoneNumber, int daysAbsent, int daysTardy) {
+        public Students(String firstName, String lastName, String username, long phoneNumber) {
             this.firstName = firstName;//set firstName
             this.lastName = lastName;//set lastName
             this.username = username;//set username
             this.phoneNumber = phoneNumber;//set phoneNumber
-            this.daysAbsent = daysAbsent;//set daysAbsent
-            this.daysTardy = daysTardy;//set daysTardy
+            daysAbsent = 0;//set daysAbsent as 0
+            daysTardy = 0;//set daysTardy as 0
             Assignments = new ArrayList<>();//create space for assignments to be added to
         }
     //Methods:
-        //boolean addStudent(String firstName, String lastName, string username, long phoneNumber){
-            //creates a new student
-        //}
-        //double getOverallScore(String username){
+        public void markTardy(){
+            daysTardy++;//marks a student tardy
+        }
+        public void markAbsent(){
+            daysAbsent++;//marks a student absent
+        }
+        public int getDaysTardy() {
+            return daysTardy;
+        }
+
+    //double getOverallScore(String username){
             //returns overall score as a percentage for specified student
         //}
         //boolean addAssignmentToStudent(String username, String assignmentName, int pointsPossible){
@@ -38,16 +46,10 @@ public class Students {
         //double getAssignmentScorePercent(String username, String assignmentName){
             //returns score as a percentage for student in current section
         //}
-        //boolean markTardy(String username){
-            //adds 1 to the students tardy count
-        //}
-        //boolean markAbsent(String username){
-            //adds 1 to the students absent count
-        //}
-        //int getTardyCount(String username){
-            //returns number of times student was tardy
-        //}
         //int getAbsentCount(String username){
             //returns number of times student was absent
         //}
+        public String getUsername() {
+            return username;
+        }
 }

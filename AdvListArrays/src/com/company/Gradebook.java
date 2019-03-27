@@ -17,33 +17,28 @@ public class Gradebook {
         }
     //Methods:
         public boolean changeSection(String sectionName){//sets the currently active section
+            if(getCurrentSection().equals(sectionName)) {//else if sectionName already active...
+                return false;//return false
+            }
             int sectionIndex =  getSectionIndexBySectionName(sectionName);
             if(sectionIndex == -1){//if sectionName not found...
-                System.out.println("Section not found.");
                 return false;//return false
             }
-            if(getCurrentSection().equals(sectionName)) {//else if sectionName already active...
-                System.out.println(sectionName + " is already active.");
-                return false;//return false
+            else {//else...
+                CurrentSection = sectionName;//switch current section to searched section
+                return true;//return true
             }
-            //FIXME
-            //else...
-                //switch current section to searched section
-                //return true
         }
         public boolean addSection(String sectionName){//creates a new section if there are not already 6 sections and sectionName isn't already used
             if(Sections.size()==6) {//if 6 sections already...
-                System.out.println(sectionName + " cannot be added(There are already 6 sections added).");
                 return false;//return false
             }
             int sectionIndex = getSectionIndexBySectionName(sectionName);
             if(sectionIndex != -1) {//if sectionName used already...
-                System.out.println(sectionName + " is already added.");
                 return false;//return false
             }
             else {//else...
                 Sections.add(new Sections(sectionName));//create new section and add to sections list
-                System.out.println(sectionName + " has been added.");
                 CurrentSection = sectionName;//set new section as the current section
                 return true;//return true
             }
@@ -59,8 +54,56 @@ public class Gradebook {
             //if no section found with the given section name...
             return -1;//return -1
         }
-
-        public String getCurrentSection() {
-            return CurrentSection;
+        private Sections getCurrentSection() {//get current section
+            int index = getSectionIndexBySectionName(CurrentSection);//get section index
+            if(index == -1) {//if index == -1...
+                return null;//return null
+            }
+            else {//else...
+                return Sections.get(index);//return section at that index
+            }
+        }
+        boolean addStudent(String firstName, String lastName, String username, long phoneNumber){//creates a new student
+            if(Sections.size() == 0) {//if no sections...
+                return false;//return false
+            }
+            Sections currSection = getCurrentSection();//get current section
+            if (currSection == null){//if the currSection == null...
+                return false;//return false
+            }
+            boolean retVal = currSection.addStudent(firstName, lastName, username, phoneNumber);//add student to active section
+            return retVal;
+        }
+        boolean markTardy(String username){//adds 1 to the students tardy count
+            if(Sections.size() == 0) {//if no sections...
+                return false;//return false
+            }
+            Sections currSection = getCurrentSection();//get current section
+            if (currSection == null){//if the currSection == null...
+                return false;//return false
+            }
+            return currSection.markTardy(username);//mark the student tardy
+        }
+        boolean markAbsent(String username){//adds 1 to the students absent count
+            if(Sections.size() == 0) {//if no sections...
+                return false;//return false
+            }
+            Sections currSection = getCurrentSection();//get current section
+            if (currSection == null){//if the currSection == null...
+                return false;//return false
+            }
+            return currSection.markAbsent(username);//mark the student absent
+        }
+        int getTardyCount(String username){//returns number of times student was tardy
+            if(Sections.size() == 0) {//if no sections...
+                int tardyCount = -1;
+                return tardyCount;//return tardyCount
+            }
+            Sections currSection = getCurrentSection();//get current section
+            if (currSection == null){//if the currSection == null...
+                int tardyCount = -1;
+                return tardyCount;//return tardyCount
+            }
+            return currSection.getTardyCount(username);//get the student's tardy count
         }
 }

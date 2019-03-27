@@ -24,20 +24,60 @@ public class Main {
             System.out.println("get tardy count");
             System.out.println("get absent count");
             String command = console.nextLine();
-            if (command.equals("change section")) {
-                //FIXME
-            } else if (command.equals("add section")) {
-                while (true) {
-                    System.out.println("Enter new section name:");
-                    String sectionName = console.nextLine();
-                    boolean newSection = Gradebook.addSection(sectionName);
-                    if (newSection = true) {
-                        break;
-                    } else if (newSection = false) {
-                        continue;//FIXME
-                    }
+            if (command.equals("change section")) {//change section
+                System.out.println("Enter Section Name:");
+                String sectionName = console.nextLine();
+                boolean currentSection = Gradebook.changeSection(sectionName);
+                if (currentSection = true){
+                    System.out.println("Current Section: " + sectionName);
                 }
+                continue;
+            } else if (command.equals("add section")) {//add section
+                System.out.println("Enter new section name:");
+                String sectionName = console.nextLine();
+                boolean newSection = Gradebook.addSection(sectionName);
+                continue;
+            } else if (command.equals("add student")){//add student
+                System.out.println("Enter the Student's First Name:");
+                String firstName = console.nextLine();
+                System.out.println("Enter the Student's Last Name:");
+                String lastName = console.nextLine();
+                System.out.println("Enter the Student's Username:");
+                String username = console.nextLine();
+                System.out.println("Enter the Student's Phone Number:");
+                long phoneNumber = Long.parseLong(console.nextLine());
+                boolean addStudent = Gradebook.addStudent(firstName, lastName, username, phoneNumber);
+                continue;
             }
+            //add assignment to student
+            //add assignment to section
+            //set score
+            else if (command.equals("mark tardy")) {//mark tardy
+                System.out.println("Enter Student Username:");
+                String username = console.nextLine();
+                boolean markTardy = Gradebook.markTardy(username);
+                continue;
+            }
+            else if (command.equals("mark absent")) {//mark absent
+                System.out.println("Enter Student Username:");
+                String username = console.nextLine();
+                boolean markAbsent = Gradebook.markAbsent(username);
+                continue;
+            }
+            //get overall score
+            //get overall score avg
+            //get assignment score
+            //get assignment score avg
+            else if (command.equals("get tardy count")) {//get tardy count
+                System.out.println("Enter Student Username:");
+                String username = console.nextLine();
+                int getTardyCount = Gradebook.getTardyCount(username);
+                if (getTardyCount !=-1){
+                    System.out.println(getTardyCount);
+                }
+                continue;
+            }
+            //get absent count
         }
         // The gradebook needs to keep track of different "sections"
         // It should also keep track of what section is currently active ("being viewed")
