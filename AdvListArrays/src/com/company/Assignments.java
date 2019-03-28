@@ -9,13 +9,17 @@ public class Assignments {
         private int pointsPossible;// pointsPossible (int)
         private int pointsEarned;// pointsEarned (int)
     //Constructors:
-        public Assignments(String assignmentName, int pointsPossible, int pointsEarned) {
+        public Assignments(String assignmentName, int pointsPossible) {
             this.assignmentName = assignmentName;//set assignmentName
             this.pointsPossible = pointsPossible;//set pointsPossible
-            this.pointsEarned = pointsEarned;//set pointsEarned to 0
+            this.pointsEarned = 0;//set pointsEarned to 0
         }
     //Methods:
-        //boolean setScore(String username, String assignmentName, int pointsEarned){
-            //set a score for a specified assignment
-        //}
+        public String getAssignmentName() {
+            return assignmentName;
+        }
+        public boolean setScore(Assignments searchedAssignment, int pointsEarned){
+            searchedAssignment.pointsEarned = pointsEarned;
+            return true;
+        }
 }

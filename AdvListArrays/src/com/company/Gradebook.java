@@ -63,7 +63,10 @@ public class Gradebook {
                 return Sections.get(index);//return section at that index
             }
         }
-        boolean addStudent(String firstName, String lastName, String username, long phoneNumber){//creates a new student
+        public String getCurrentSectionName(){
+            return CurrentSection;
+        }
+        public boolean addStudent(String firstName, String lastName, String username, long phoneNumber){//creates a new student
             if(Sections.size() == 0) {//if no sections...
                 return false;//return false
             }
@@ -74,7 +77,32 @@ public class Gradebook {
             boolean retVal = currSection.addStudent(firstName, lastName, username, phoneNumber);//add student to active section
             return retVal;
         }
-        boolean markTardy(String username){//adds 1 to the students tardy count
+        public boolean addAssignmentToStudent(String username, String assignmentName, int pointsPossible){//creates a new assignment for a specified student
+            if(Sections.size() == 0) {//if no sections...
+                return false;//return false
+            }
+            Sections currSection = getCurrentSection();//get current section
+            if (currSection == null){//if the currSection == null...
+                return false;//return false
+            }
+            boolean retVal = currSection.addAssignmentToStudent(username,assignmentName,pointsPossible);//add assignment to the specified student
+            return retVal;
+        }
+        //creates a new assignment for a section//FIXME
+        public boolean setScore(String username, String assignmentName, int pointsEarned){//set a score for a specified assignment
+            if(Sections.size() == 0) {//if no sections...
+                return false;//return false
+            }
+            Sections currSection = getCurrentSection();//get current section
+            if (currSection == null){//if the currSection == null...
+                return false;//return false
+            }
+            return currSection.setScore(username, assignmentName, pointsEarned);//set the specified student and assignment's score
+        }
+        public double getOverallScore(String username){//returns overall score as a percentage for specified student
+            //FIXME
+        }
+        public boolean markTardy(String username){//adds 1 to the students tardy count
             if(Sections.size() == 0) {//if no sections...
                 return false;//return false
             }
@@ -84,7 +112,7 @@ public class Gradebook {
             }
             return currSection.markTardy(username);//mark the student tardy
         }
-        boolean markAbsent(String username){//adds 1 to the students absent count
+        public boolean markAbsent(String username){//adds 1 to the students absent count
             if(Sections.size() == 0) {//if no sections...
                 return false;//return false
             }
@@ -106,4 +134,17 @@ public class Gradebook {
             }
             return currSection.getTardyCount(username);//get the student's tardy count
         }
+        int getAbsentCount(String username){//returns number of times student was absent
+            if(Sections.size() == 0) {//if no sections...
+                int absentCount = -1;
+                return absentCount;//return absentCount
+            }
+            Sections currSection = getCurrentSection();//get current section
+            if (currSection == null){//if the currSection == null...
+                int absentCount = -1;
+                return absentCount;//return absentCount
+            }
+            return currSection.getAbsentCount(username);//get the student's absent count
+        }
+
 }

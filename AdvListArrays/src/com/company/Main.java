@@ -32,12 +32,16 @@ public class Main {
                     System.out.println("Current Section: " + sectionName);
                 }
                 continue;
-            } else if (command.equals("add section")) {//add section
+            }else if (command.equals("add section")) {//add section
                 System.out.println("Enter new section name:");
                 String sectionName = console.nextLine();
                 boolean newSection = Gradebook.addSection(sectionName);
+                if (newSection = true){
+                    System.out.println(sectionName + " has been added.");
+                }
                 continue;
-            } else if (command.equals("add student")){//add student
+            }else if (command.equals("add student")){//add student
+                String currentSection = Gradebook.getCurrentSectionName();
                 System.out.println("Enter the Student's First Name:");
                 String firstName = console.nextLine();
                 System.out.println("Enter the Student's Last Name:");
@@ -47,21 +51,60 @@ public class Main {
                 System.out.println("Enter the Student's Phone Number:");
                 long phoneNumber = Long.parseLong(console.nextLine());
                 boolean addStudent = Gradebook.addStudent(firstName, lastName, username, phoneNumber);
+                if (addStudent = true){
+                    System.out.println(firstName + " " + lastName + " has been added to " + currentSection + ".");
+                }
                 continue;
-            }
-            //add assignment to student
-            //add assignment to section
-            //set score
-            else if (command.equals("mark tardy")) {//mark tardy
+            }else if (command.equals("add assignment to student")) {//add assignment to student
+                System.out.println("Enter Student Username:");
+                String username = console.nextLine();
+                System.out.println("Enter Assignment Name:");
+                String assignmentName = console.nextLine();
+                System.out.println("Enter Max Amount of Points Possible:");
+                int pointsPossible = Integer.parseInt(console.nextLine());
+                boolean addAssignmentToStudent = Gradebook.addAssignmentToStudent(username,assignmentName,pointsPossible);
+                if (addAssignmentToStudent = true){
+                    System.out.println(username + " has a new assignment: " + assignmentName);
+                }
+                continue;
+            }else if (command.equals("add assignment to section")) {//add assignment to section
+                System.out.println("Enter Section Name:");
+                String sectionName = console.nextLine();
+                System.out.println("Enter Assignment Name:");
+                String assignmentName = console.nextLine();
+                System.out.println("Enter Max Amount of Points Possible:");
+                int pointsPossible = Integer.parseInt(console.nextLine());
+                boolean addAssignmentToSection;//FIXME
+                if (addAssignmentToSection = true){
+                    System.out.println( sectionName + " has a new assignment: " + assignmentName);
+                }
+                continue;
+            }else if (command.equals("set score")) {//set score
+                System.out.println("Enter Student Username:");
+                String username = console.nextLine();
+                System.out.println("Enter Assignment Name:");
+                String assignmentName = console.nextLine();
+                System.out.println("Enter Points Earned:");
+                int pointsEarned = Integer.parseInt(console.nextLine());
+                boolean setScore = Gradebook.setScore(username,assignmentName,pointsEarned);
+                if (setScore = true){
+                    System.out.println(username + "'s " + assignmentName + " has been graded: " + pointsEarned + "/" + "GET_POINTS_POSSIBLE");//FIXME
+                }
+            }else if (command.equals("mark tardy")) {//mark tardy
                 System.out.println("Enter Student Username:");
                 String username = console.nextLine();
                 boolean markTardy = Gradebook.markTardy(username);
+                if (markTardy = true){
+                    System.out.println(username + " has been marked tardy.");
+                }
                 continue;
-            }
-            else if (command.equals("mark absent")) {//mark absent
+            }else if (command.equals("mark absent")) {//mark absent
                 System.out.println("Enter Student Username:");
                 String username = console.nextLine();
                 boolean markAbsent = Gradebook.markAbsent(username);
+                if (markAbsent = true){
+                    System.out.println(username + " has been marked absent.");
+                }
                 continue;
             }
             //get overall score
@@ -73,11 +116,18 @@ public class Main {
                 String username = console.nextLine();
                 int getTardyCount = Gradebook.getTardyCount(username);
                 if (getTardyCount !=-1){
-                    System.out.println(getTardyCount);
+                    System.out.println(username + "'s tardy count: " + getTardyCount);
+                }
+                continue;
+            } else if (command.equals("get absent count")) {//get absent count
+                System.out.println("Enter Student Username:");
+                String username = console.nextLine();
+                int getAbsentCount = Gradebook.getAbsentCount(username);
+                if (getAbsentCount !=-1){
+                    System.out.println(username + "'s tardy count: " + getAbsentCount);
                 }
                 continue;
             }
-            //get absent count
         }
         // The gradebook needs to keep track of different "sections"
         // It should also keep track of what section is currently active ("being viewed")

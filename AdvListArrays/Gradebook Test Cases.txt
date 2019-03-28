@@ -1086,7 +1086,7 @@ Input		 |Output
 get overall score|
 	      	 |Enter Student Username:
 JohnSmith123   	 |
-	      	 |John's Overall Score: 100%
+	      	 |John's Overall Score: 100
       	      	 |Type one of the following commands:
 	      	 |change section
 	      	 |add section

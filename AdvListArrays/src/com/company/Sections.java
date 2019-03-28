@@ -19,10 +19,6 @@ public class Sections {
         //public double getOverallScoreAvg(String sectionName){
             //returns overall score as a percentage for a section
         //}
-        //public boolean addAssignmentToSection(String assignmentName, int pointsPossible){
-            //creates a new assignment for a section
-
-        //}
         //public double getAssignmentScoreAvg(String assignmentName){
             //returns score as a percentage for current section
         //}
@@ -37,6 +33,26 @@ public class Sections {
             }
             else {//else...
                 Students.add(new Students(firstName, lastName, username, phoneNumber));//create new student and add to students list
+                return true;//return true
+            }
+        }
+        public boolean addAssignmentToStudent(String username, String assignmentName, int pointsPossible){
+            Students currStudent = getCurrentStudent(username);//get the student specified by username
+            if(currStudent == null) {//if student not found...
+                return false;//return false
+            }
+            else {//else...
+                currStudent.addAssignmentToStudent(username,assignmentName,pointsPossible);//add a assignment to the specified student
+                return true;//return true
+            }
+        }
+        public boolean setScore(String username, String assignmentName, int pointsEarned){
+            Students currStudent = getCurrentStudent(username);//get the student specified by username
+            if(currStudent == null) {//if student not found...
+                return false;//return false
+            }
+            else {//else...
+                currStudent.setScore(username,assignmentName,pointsEarned);//set the score for the student's assignment
                 return true;//return true
             }
         }
@@ -71,6 +87,17 @@ public class Sections {
                 return tardyCount;
             }
         }
+        int getAbsentCount(String username){//returns number of times student was absent
+            Students currStudent = getCurrentStudent(username);//get the student specified by username
+            if(currStudent == null) {//if student not found...
+                int absentCount = -1;
+                return absentCount;//return absentCount
+            }
+            else {//else...
+                int absentCount = currStudent.getDaysAbsent();//get the specified student's absent count
+                return absentCount;
+            }
+        }
         private int getStudentIndexByUsername(String username){//search if given username is used already
             int index = 0;
             while (index < Students.size()){
@@ -82,13 +109,13 @@ public class Sections {
             //if no student found with the given username...
             return -1;//return -1
         }
-    private Students getCurrentStudent(String username) {//get current student
-        int index = getStudentIndexByUsername(username);//get student index
-        if(index == -1) {//if index == -1...
-            return null;//return null
+        private Students getCurrentStudent(String username) {//get current student
+            int index = getStudentIndexByUsername(username);//get student index
+            if(index == -1) {//if index == -1...
+                return null;//return null
+            }
+            else {//else...
+                return Students.get(index);//return student at that index
+            }
         }
-        else {//else...
-            return Students.get(index);//return student at that index
-        }
-    }
 }

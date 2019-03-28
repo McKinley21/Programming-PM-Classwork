@@ -1,6 +1,8 @@
 package com.company;
 
 
+import sun.org.mozilla.javascript.internal.ast.Assignment;
+
 import java.util.ArrayList;
 
 /**
@@ -8,46 +10,79 @@ import java.util.ArrayList;
  */
 public class Students {
     //Properties:
-        private ArrayList<Assignments> Assignments;// Assignments (List)
-            //create Assignments class
-        private String firstName;// firstName (String)
-        private String lastName;// lastName (String)
-        private String username;// username (String)
-        private long phoneNumber;// phoneNumber (long)
-        private int daysAbsent;//daysAbsent (int)
-        private int daysTardy;//daysTardy (int)
-    //Constructors:
-        public Students(String firstName, String lastName, String username, long phoneNumber) {
-            this.firstName = firstName;//set firstName
-            this.lastName = lastName;//set lastName
-            this.username = username;//set username
-            this.phoneNumber = phoneNumber;//set phoneNumber
-            daysAbsent = 0;//set daysAbsent as 0
-            daysTardy = 0;//set daysTardy as 0
-            Assignments = new ArrayList<>();//create space for assignments to be added to
-        }
-    //Methods:
-        public void markTardy(){
-            daysTardy++;//marks a student tardy
-        }
-        public void markAbsent(){
-            daysAbsent++;//marks a student absent
-        }
-        public int getDaysTardy() {
-            return daysTardy;
-        }
+    private ArrayList<Assignments> Assignments;// Assignments (List)
+    //create Assignments class
+    private String firstName;// firstName (String)
+    private String lastName;// lastName (String)
+    private String username;// username (String)
+    private long phoneNumber;// phoneNumber (long)
+    private int daysAbsent;//daysAbsent (int)
+    private int daysTardy;//daysTardy (int)
 
-    //double getOverallScore(String username){
-            //returns overall score as a percentage for specified student
-        //}
-        //boolean addAssignmentToStudent(String username, String assignmentName, int pointsPossible){
-            //creates a new assignment for a specified student
-        //}
+    //Constructors:
+    public Students(String firstName, String lastName, String username, long phoneNumber) {
+        this.firstName = firstName;//set firstName
+        this.lastName = lastName;//set lastName
+        this.username = username;//set username
+        this.phoneNumber = phoneNumber;//set phoneNumber
+        daysAbsent = 0;//set daysAbsent as 0
+        daysTardy = 0;//set daysTardy as 0
+        Assignments = new ArrayList<>();//create space for assignments to be added to
+    }
+
+    //Methods:
+    public void markTardy() {
+        daysTardy++;//marks a student tardy
+    }
+
+    public void markAbsent() {
+        daysAbsent++;//marks a student absent
+    }
+
+    public int getDaysTardy() {
+        return daysTardy;//gets a student's tardy count
+    }
+
+    public int getDaysAbsent() {
+        return daysAbsent;//gets a student's absent count
+    }
+
+    public ArrayList<Assignments> getAssignments() {
+        return Assignments;
+    }
+
+    public boolean addAssignmentToStudent(String username, String assignmentName, int pointsPossible) {
+        int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
+        if (assignmentIndex != -1) {//if assignment exists...
+            return false;//return false
+        } else {//else...
+            Assignments.add(new Assignments(assignmentName, pointsPossible));//create new assignment and add to assignments list
+            return true;//return true
+        }
+    }
+    public boolean setScore(String username, String assignmentName, int pointsEarned){
+        int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
+        if (assignmentIndex != -1) {//if assignment exists...
+            return false;//return false
+        } else {//else...
+            Assignments searchedAssignment = Assignments.get(assignmentIndex);
+            boolean retVal = searchedAssignment.setScore(searchedAssignment,pointsEarned);
+            return retVal;//return retVal
+        }
+    }
+    private int getAssignmentIndexByAssignmentName(String assignmentName) {//search if given assignmentName is used already
+        int index = 0;
+        while (index < Assignments.size()) {
+            if (assignmentName.equalsIgnoreCase(Assignments.get(index).getAssignmentName())) {//if a assignment is found with the given assignmentName...
+                return index;//return the found index
+            }
+            index++;
+        }
+        //if no assignment found with the given assignmentName...
+        return -1;//return -1
+    }
         //double getAssignmentScorePercent(String username, String assignmentName){
             //returns score as a percentage for student in current section
-        //}
-        //int getAbsentCount(String username){
-            //returns number of times student was absent
         //}
         public String getUsername() {
             return username;
