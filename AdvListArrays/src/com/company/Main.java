@@ -106,12 +106,31 @@ public class Main {
                     System.out.println(username + " has been marked absent.");
                 }
                 continue;
-            }
-            //get overall score
-            //get overall score avg
-            //get assignment score
-            //get assignment score avg
-            else if (command.equals("get tardy count")) {//get tardy count
+            }else if (command.equals("get overall score")) {//get overall score
+                System.out.println("Enter Student Username:");
+                String username = console.nextLine();
+                boolean getOverallScore = Gradebook.getOverallScore(username);
+                continue;
+            }else if (command.equals("get overall score avg")) {//get overall score avg
+                System.out.println("Enter Section Name:");
+                String sectionName = console.nextLine();
+                boolean getOverallScoreAvg = Gradebook.getOverallScoreAvg(sectionName);
+                continue;
+            }else if (command.equals("get assignment score")) {//get assignment score
+                System.out.println("Enter Student Username:");
+                String username = console.nextLine();
+                System.out.println("Enter Assignment Name:");
+                String assignmentName = console.nextLine();
+                boolean getAssignmentScorePercent = Gradebook.getAssignmentScorePercent(username,assignmentName);
+                continue;
+            }else if (command.equals("get assignment score avg")) {//get assignment score avg
+                System.out.println("Enter Section Name:");
+                String sectionName = console.nextLine();
+                System.out.println("Enter Assignment Name:");
+                String assignmentName = console.nextLine();
+                boolean getAssignmentScoreAvg = Gradebook.getAssignmentScoreAvg(assignmentName);
+                continue;
+            }else if (command.equals("get tardy count")) {//get tardy count
                 System.out.println("Enter Student Username:");
                 String username = console.nextLine();
                 int getTardyCount = Gradebook.getTardyCount(username);
@@ -119,7 +138,7 @@ public class Main {
                     System.out.println(username + "'s tardy count: " + getTardyCount);
                 }
                 continue;
-            } else if (command.equals("get absent count")) {//get absent count
+            }else if (command.equals("get absent count")) {//get absent count
                 System.out.println("Enter Student Username:");
                 String username = console.nextLine();
                 int getAbsentCount = Gradebook.getAbsentCount(username);

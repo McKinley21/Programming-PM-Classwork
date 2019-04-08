@@ -16,13 +16,6 @@ public class Sections {
             Students = new ArrayList<>();//create space for students to be added to
         }
     //Methods:
-        //public double getOverallScoreAvg(String sectionName){
-            //returns overall score as a percentage for a section
-        //}
-        //public double getAssignmentScoreAvg(String assignmentName){
-            //returns score as a percentage for current section
-        //}
-
         public String getSectionName() {
             return sectionName;
         }
@@ -46,6 +39,26 @@ public class Sections {
                 return true;//return true
             }
         }
+        public boolean addAssignmentToSection(Sections currSection, String assignmentName, int pointsPossible){
+            if(currSection.Students.isEmpty()) {//if students not found...
+                return false;//return false
+            }
+            else {//else...
+                int studentIndex = 0;
+                while (studentIndex < currSection.Students.size()){
+                    Students currStudent = currSection.Students.get(studentIndex);
+                    if(currStudent == null) {//if student not found...
+                        return false;//return false
+                    }
+                    else {//else...
+                        currStudent.addAssignmentToStudent(currStudent.getUsername(),assignmentName,pointsPossible);//add a assignment to each student in the current section
+                    }
+                    studentIndex++;
+                }
+                System.out.println(sectionName + " has a new assignment: " + assignmentName);
+                return true;//return true
+            }
+        }
         public boolean setScore(String username, String assignmentName, int pointsEarned){
             Students currStudent = getCurrentStudent(username);//get the student specified by username
             if(currStudent == null) {//if student not found...
@@ -53,6 +66,57 @@ public class Sections {
             }
             else {//else...
                 currStudent.setScore(username,assignmentName,pointsEarned);//set the score for the student's assignment
+                return true;//return true
+            }
+        }
+        public boolean getOverallScore(String username){
+            Students currStudent = getCurrentStudent(username);//get the student specified by username
+            if(currStudent == null) {//if student not found...
+                return false;//return false
+            }
+            else {//else...
+                double overallScorePercent = currStudent.getOverallScore(currStudent);//get the overall score as a percentage for specified student
+                System.out.println(username + "'s Overall Score: " + overallScorePercent + "%");
+                return true;//return true
+            }
+        }
+        public double getOverallScoreAvg(Sections currSection){
+            double overallScoreAvg = 0;
+            int studentIndex = 0;
+            while (studentIndex < currSection.Students.size()){
+                Students currStudent = currSection.Students.get(studentIndex);
+                double currStudentOverallPercent = currStudent.getOverallScore(currStudent);
+                overallScoreAvg = overallScoreAvg + currStudentOverallPercent;
+                studentIndex++;
+            }
+            overallScoreAvg = overallScoreAvg/(studentIndex+1);
+            return overallScoreAvg;
+        }
+        public boolean getAssignmentScorePercent(String username, String assignmentName){
+            Students currStudent = getCurrentStudent(username);//get the student specified by username
+            if(currStudent == null) {//if student not found...
+                return false;//return false
+            }
+            else {//else...
+                currStudent.getAssignmentScorePercent(username, assignmentName);//returns score as a percentage for student in current section
+                return true;//return true
+            }
+        }
+        public boolean getAssignmentScoreAvg(Sections currSection, String assignmentName){
+            if(currSection.Students.isEmpty()) {//if students not found...
+                return false;//return false
+            }
+            else {//else...
+                double assignmentScoreAvg = 0;
+                int studentIndex = 0;
+                while (studentIndex < currSection.Students.size()){
+                    Students currStudent = currSection.Students.get(studentIndex);
+                    double currStudentAssignmentPercent = currStudent.getAssignmentScoreAvg(currStudent.getUsername(),assignmentName);
+                    assignmentScoreAvg = assignmentScoreAvg + currStudentAssignmentPercent;
+                    studentIndex++;
+                }
+                assignmentScoreAvg = assignmentScoreAvg/(studentIndex+1);//returns the avg assignment score as a percentage for the current section
+                System.out.println(sectionName + "'s average " + assignmentName + " score: " + assignmentScoreAvg + "%");
                 return true;//return true
             }
         }

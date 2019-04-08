@@ -62,12 +62,45 @@ public class Students {
     }
     public boolean setScore(String username, String assignmentName, int pointsEarned){
         int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
-        if (assignmentIndex != -1) {//if assignment exists...
+        if (assignmentIndex != -1) {//if assignment doesn't exists...
             return false;//return false
         } else {//else...
             Assignments searchedAssignment = Assignments.get(assignmentIndex);
             boolean retVal = searchedAssignment.setScore(searchedAssignment,pointsEarned);
             return retVal;//return retVal
+        }
+    }
+    public double getOverallScore(Students currStudent){
+        double overallScore = 0;
+        int assignmentIndex = 0;
+        while (assignmentIndex < currStudent.Assignments.size()){
+            Assignments currAssignment = currStudent.Assignments.get(assignmentIndex);
+            double currAssignmentPercent = currAssignment.getAssignmentScorePercent(currAssignment);
+            overallScore = overallScore + currAssignmentPercent;
+            assignmentIndex++;
+        }
+        overallScore = overallScore/(assignmentIndex+1);
+        return overallScore;
+    }
+    public boolean getAssignmentScorePercent(String username, String assignmentName){
+        int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
+        if (assignmentIndex != -1) {//if assignment doesn't exists...
+            return false;//return false
+        } else {//else...
+            Assignments searchedAssignment = Assignments.get(assignmentIndex);
+            double scorePercent = (searchedAssignment.getAssignmentScorePercent(searchedAssignment))*100;
+            System.out.println(username + "'s " + assignmentName + " score: " + scorePercent + "%");
+            return true;
+        }
+    }
+    public double getAssignmentScoreAvg(String username, String assignmentName){
+        int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
+        if (assignmentIndex != -1) {//if assignment doesn't exists...
+            return -1;//return -1
+        } else {//else...
+            Assignments searchedAssignment = Assignments.get(assignmentIndex);
+            double scorePercent = (searchedAssignment.getAssignmentScorePercent(searchedAssignment))*100;
+            return scorePercent;
         }
     }
     private int getAssignmentIndexByAssignmentName(String assignmentName) {//search if given assignmentName is used already
@@ -81,10 +114,7 @@ public class Students {
         //if no assignment found with the given assignmentName...
         return -1;//return -1
     }
-        //double getAssignmentScorePercent(String username, String assignmentName){
-            //returns score as a percentage for student in current section
-        //}
-        public String getUsername() {
+    public String getUsername() {
             return username;
         }
 }

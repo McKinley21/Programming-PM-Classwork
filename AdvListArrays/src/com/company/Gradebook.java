@@ -88,7 +88,17 @@ public class Gradebook {
             boolean retVal = currSection.addAssignmentToStudent(username,assignmentName,pointsPossible);//add assignment to the specified student
             return retVal;
         }
-        //creates a new assignment for a section//FIXME
+        public boolean addAssignmentToSection(String assignmentName, int pointsPossible) {//creates a new assignment for a section
+            if(Sections.size() == 0) {//if no sections...
+                return false;//return false
+            }
+            Sections currSection = getCurrentSection();//get current section
+            if (currSection == null){//if the currSection == null...
+                return false;//return false
+            }
+            boolean retVal = currSection.addAssignmentToSection(assignmentName,pointsPossible);//add assignment to the specified section
+            return retVal;
+        }
         public boolean setScore(String username, String assignmentName, int pointsEarned){//set a score for a specified assignment
             if(Sections.size() == 0) {//if no sections...
                 return false;//return false
@@ -99,8 +109,47 @@ public class Gradebook {
             }
             return currSection.setScore(username, assignmentName, pointsEarned);//set the specified student and assignment's score
         }
-        public double getOverallScore(String username){//returns overall score as a percentage for specified student
-            //FIXME
+        public boolean getOverallScore(String username){//returns overall score as a percentage for specified student
+            if(Sections.size() == 0) {//if no sections...
+                return false;//return false
+            }
+            Sections currSection = getCurrentSection();//get current section
+            if (currSection == null){//if the currSection == null...
+                return false;//return false
+            }
+            return currSection.getOverallScore(username);//get the specified student's overall score
+        }
+        public boolean getOverallScoreAvg(String sectionName){//returns overall score as a percentage for a section
+            if(Sections.size() == 0) {//if no sections...
+                return false;//return false
+            }
+            Sections currSection = getCurrentSection();//get current section
+            if (currSection == null){//if the currSection == null...
+                return false;//return false
+            }
+            double overallScoreAvg = currSection.getOverallScoreAvg(currSection);//get the specified section's overall score
+            System.out.println(sectionName + "'s Overall Score Avg: " + overallScoreAvg + "%");
+            return true;
+        }
+        public boolean getAssignmentScorePercent(String username, String assignmentName){//returns score as a percentage for student in current section
+            if(Sections.size() == 0) {//if no sections...
+                return false;//return false
+            }
+            Sections currSection = getCurrentSection();//get current section
+            if (currSection == null){//if the currSection == null...
+                return false;//return false
+            }
+            return currSection.getAssignmentScorePercent(username, assignmentName);//get the specified assignment's score of the specified student as a percent
+        }
+        public boolean getAssignmentScoreAvg(String assignmentName){//returns score as a percentage for current section
+            if(Sections.size() == 0) {//if no sections...
+                return false;//return false
+            }
+            Sections currSection = getCurrentSection();//get current section
+            if (currSection == null){//if the currSection == null...
+                return false;//return false
+            }
+            return currSection.getAssignmentScoreAvg(currSection, assignmentName);//get the specified assignment's score as an overall percentage
         }
         public boolean markTardy(String username){//adds 1 to the students tardy count
             if(Sections.size() == 0) {//if no sections...

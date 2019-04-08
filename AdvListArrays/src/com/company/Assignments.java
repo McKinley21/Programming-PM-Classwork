@@ -22,4 +22,10 @@ public class Assignments {
             searchedAssignment.pointsEarned = pointsEarned;
             return true;
         }
+        public double getAssignmentScorePercent(Assignments searchedAssignment){
+            double pointsEarned = searchedAssignment.pointsEarned;
+            double pointsPossible = searchedAssignment.pointsPossible;
+            double score = pointsEarned/pointsPossible;
+            return score;
+        }
 }
