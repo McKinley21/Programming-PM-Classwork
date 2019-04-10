@@ -74,7 +74,7 @@ public class Main {
                 String assignmentName = console.nextLine();
                 System.out.println("Enter Max Amount of Points Possible:");
                 int pointsPossible = Integer.parseInt(console.nextLine());
-                boolean addAssignmentToSection;//FIXME
+                boolean addAssignmentToSection = Gradebook.addAssignmentToSection(assignmentName,pointsPossible);
                 if (addAssignmentToSection = true){
                     System.out.println( sectionName + " has a new assignment: " + assignmentName);
                 }

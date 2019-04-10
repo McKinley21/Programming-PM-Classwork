@@ -618,7 +618,7 @@ SteveJ234  |
 	   |get tardy count
 	   |get absent count
 ______________________________________________________________________________
-//adds a seventh student to the same section(different name, same username)
+//adds a sixth student to the same section(different name, same username)
 Input	   |Output
       	   |Type one of the following commands:
 	   |change section
@@ -664,7 +664,7 @@ JoeBlack234|
 	   |get tardy count
 	   |get absent count
 ______________________________________________________________________________
-//adds a eighth student to the same section(first name w/ numbers)
+//adds a seventh student to the same section(first name w/ numbers)
 Input	   |Output
       	   |Type one of the following commands:
 	   |change section
@@ -710,7 +710,7 @@ RedBlack234|
 	   |get tardy count
 	   |get absent count
 ______________________________________________________________________________
-//adds a ninth student to the same section(last name w/ numbers)
+//adds an eighth student to the same section(last name w/ numbers)
 Input	   |Output
       	   |Type one of the following commands:
 	   |change section
@@ -755,7 +755,7 @@ RedBlack234|
 	   |get tardy count
 	   |get absent count
 ______________________________________________________________________________
-//adds a tenth student to the same section(username w/ symbols)
+//adds a ninth student to the same section(username w/ symbols)
 Input	     |Output
       	     |Type one of the following commands:
 	     |change section
@@ -798,7 +798,7 @@ RedBlack2_3+4|
 	     |get tardy count
 	     |get absent count
 ______________________________________________________________________________
-//adds a eleventh student to the same section(phone number w/ words and symbols)
+//adds a tenth student to the same section(phone number w/ words and symbols)
 Input	     |Output
       	     |Type one of the following commands:
 	     |change section
@@ -846,7 +846,7 @@ sixty-seven  |
 	     |get tardy count
 	     |get absent count
 ______________________________________________________________________________
-//adds a twelfth student to the same section(phone number w/ less than 10 digits)
+//adds an eleventh student to the same section(phone number w/ less than 10 digits)
 Input	     |Output
       	     |Type one of the following commands:
 	     |change section
@@ -892,7 +892,7 @@ RedBlack2_3+4|
 	     |get tardy count
 	     |get absent count
 ______________________________________________________________________________
-//adds a thirteenth student to the same section(phone number w/ more than 10 digits)
+//adds a twelfth student to the same section(phone number w/ more than 10 digits)
 Input	     |Output
       	     |Type one of the following commands:
 	     |change section
@@ -938,7 +938,7 @@ RedBlack2_3+4|
 	     |get tardy count
 	     |get absent count
 ______________________________________________________________________________
-//adds a fourteenth student to the same section(usernames w/o numbers and symbols)
+//adds a thirteenth student to the same section(usernames w/o numbers and symbols)
 Input      |Output
       	   |Type one of the following commands:
 	   |change section

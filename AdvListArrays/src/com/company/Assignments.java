@@ -15,17 +15,20 @@ public class Assignments {
             this.pointsEarned = 0;//set pointsEarned to 0
         }
     //Methods:
-        public String getAssignmentName() {
-            return assignmentName;
-        }
-        public boolean setScore(Assignments searchedAssignment, int pointsEarned){
-            searchedAssignment.pointsEarned = pointsEarned;
-            return true;
-        }
-        public double getAssignmentScorePercent(Assignments searchedAssignment){
-            double pointsEarned = searchedAssignment.pointsEarned;
-            double pointsPossible = searchedAssignment.pointsPossible;
-            double score = pointsEarned/pointsPossible;
-            return score;
-        }
+        //set score:
+            public boolean setScore(Assignments searchedAssignment, int pointsEarned){
+                searchedAssignment.pointsEarned = pointsEarned;
+                return true;
+            }
+        //get assignment score:
+            public double getAssignmentScorePercent(Assignments searchedAssignment){
+                double pointsEarned = searchedAssignment.pointsEarned;
+                double pointsPossible = searchedAssignment.pointsPossible;
+                double score = pointsEarned/pointsPossible;
+                return score;
+            }
+        //other methods:
+            public String getAssignmentName() {
+                return assignmentName;
+            }
 }
