@@ -1,111 +1,104 @@
-|__________________________|
-|changeSection:		   |
-|__________________________|
-|  			   |1.
-|			   |2.
-|			   |3.
-|__________________________|
-|addSections:		   |
-|__________________________|
-|			   |1.
-|			   |2.
-|			   |3.
-|__________________________|
-|addStudents:		   |
-|__________________________|
-			  |1.
-			  |2.
-			  |3.
-			  |4.
-			  |5.
-			  |6.
-			  |7.
-			  |8.
-			  |9.
-			  |10.
-			  |11.
-			  |12.
-			  |13.
-			  |14.
-			  |15.
-__________________________|
-getOverallScore:	  |
-__________________________|
-			  |1.
-			  |2.
-			  |3.
-			  |4.
-__________________________|
-getOverallScoreAvg:	  |
-__________________________|
-			  |1.
-			  |2.
-			  |3.
-			  |4.
-			  |5.
-__________________________|
-addAssignmentToStudent:	  |
-__________________________|
-			  |1.
-			  |2.
-			  |3.
-			  |4.
-			  |5.
-__________________________|
-addAssignmentToSection:	  |
-__________________________|
-			  |1.
-			  |2.
-			  |3.
-			  |4.
-			  |5.
-__________________________|
-setScore:		  |
-__________________________|
-	  		  |1.
-	  		  |2.
-	  		  |3.
-	  		  |4.
-	  		  |5.
-__________________________|
-getAssignmentScorePercent:|
-__________________________|
-			  |1.
-			  |2.
-			  |3.
-			  |4.
-			  |5.
-			  |6.
-__________________________|
-getAssignmentScoreAvg:	  |
-__________________________|
-			  |1.
-			  |2.
-			  |3.
-			  |4.
-			  |5.
-__________________________|
-markTardy:		  |
-__________________________|
-			  |1.
-			  |2.
-			  |3.
-__________________________|
-markAbsent:		  |
-__________________________|
-			  |1.
-			  |2.
-			  |3.
-__________________________|
-getTardyCount:		  |
-__________________________|
-			  |1.
-			  |2.
-			  |3.
-__________________________|
-getAbsentCount:		  |
-__________________________|
-			  |1.
-			  |2.
-			  |3.
-__________________________|
+|_____________________|
+|changeSection:	PASSED|
+|_____________________|
+|addSection:	PASSED|
+|_____________________|
+-----------------------------------------------------------------------
+|addStudents:		   			      |
+|_____________________________________________________|
+|			   |1.Test Successful	      |//can't add student w/o section
+|			   |2.Test Successful	      |//adds student to the current section
+|			   |3.Test Successful	      |//adds a second student to the same section(same first name, different username)
+|			   |4.Test Successful	      |//adds a third student to the same section(same last name, different username)
+|			   |5.Test Successful	      |//adds a fourth student to the same section(same first and last name and phone number, different username)
+|			   |6.Test Successful	      |//adds a fifth student to the same section(same phone number, different username, and first and last names)
+|                          |7.Test Successful	      |//adds a sixth student to the same section(different name, same username)
+|                          |8.Test Successful	      |//adds a seventh student to the same section(first name w/ numbers)
+|                          |9.Test Successful	      |//adds an eighth student to the same section(last name w/ numbers)
+|			   |10.Test Successful	      |//adds a ninth student to the same section(username w/ symbols)
+|xxxxxxxxxxxxxxxxxxxxxxxxxx|11.Test Failed	      |//adds a tenth student to the same section(phone number w/ words and symbols)
+|xxxxxxxxxxxxxxxxxxxxxxxxxx|12.Test Failed	      |//adds an eleventh student to the same section(phone number w/ less than 10 digits)
+|xxxxxxxxxxxxxxxxxxxxxxxxxx|13.Test Failed	      |//adds a twelfth student to the same section(phone number w/ more than 10 digits)
+|			   |14.Test Successful	      |//adds a thirteenth student to the same section(usernames w/o numbers and symbols)
+|			   |15.Test Successful	      |//adds a student to a different section
+|__________________________|__________________________|
+|getOverallScore:	   			      |
+|_____________________________________________________|
+|			   |1.			      |
+|			   |2.			      |
+|			   |3.			      |
+|			   |4.			      |
+|__________________________|__________________________|
+|getOverallScoreAvg:	   			      |
+|_____________________________________________________|
+|			   |1.			      |
+|			   |2.			      |
+|			   |3.			      |
+|			   |4.			      |
+|			   |5.			      |
+|__________________________|__________________________|
+|addAssignmentToStudent:   			      |
+|_____________________________________________________|
+|			   |1.			      |
+|			   |2.			      |
+|			   |3.			      |
+|			   |4.			      |
+|			   |5.			      |
+|__________________________|__________________________|
+|addAssignmentToSection:   			      |
+|_____________________________________________________|
+|			   |1.			      |
+|			   |2.			      |
+|			   |3.			      |
+|			   |4.			      |
+|			   |5.			      |
+|__________________________|__________________________|
+|setScore:		   			      |
+|_____________________________________________________|
+|	  		   |1.			      |
+|	  		   |2.			      |
+|	  		   |3.			      |
+|	  		   |4.			      |
+|	  		   |5.			      |
+|__________________________|__________________________|
+|getAssignmentScorePercent:			      |
+|_____________________________________________________|
+|			   |1.			      |
+|			   |2.			      |
+|			   |3.			      |
+|			   |4.			      |
+|			   |5.			      |
+|			   |6.			      |
+|__________________________|__________________________|
+|getAssignmentScoreAvg:	   			      |
+|_____________________________________________________|
+|			   |1.			      |
+|			   |2.			      |
+|			   |3.			      |
+|			   |4.			      |
+|			   |5.			      |
+|__________________________|__________________________|
+|markTardy:		   			      |
+|_____________________________________________________|
+|			   |1.			      |
+|			   |2.			      |
+|			   |3.			      |
+|__________________________|__________________________|
+|markAbsent:		   			      |
+|_____________________________________________________|
+|			   |1.			      |
+|			   |2.			      |
+|			   |3.			      |
+|__________________________|__________________________|
+|getTardyCount:		   			      |
+|_____________________________________________________|
+|			   |1.			      |
+|			   |2.			      |
+|			   |3.			      |
+|__________________________|__________________________|
+|getAbsentCount:	   			      |
+|_____________________________________________________|
+|			   |1.			      |
+|			   |2.			      |
+| 			   |3.			      |
+|__________________________|__________________________|

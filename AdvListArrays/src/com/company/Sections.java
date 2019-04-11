@@ -17,14 +17,14 @@ public class Sections {
         }
     //Methods:
 	    //add student:
-            public boolean addStudent(String firstName, String lastName, String username, long phoneNumber){
+            public int addStudent(String firstName, String lastName, String username, long phoneNumber){
                 int studentIndex = getStudentIndexByUsername(username);
                 if (studentIndex !=-1) {//if username exists...
-                    return false;//return false
+                    return -1;//return false
                 }
                 else {//else...
                     Students.add(new Students(firstName, lastName, username, phoneNumber));//create new student and add to students list
-                    return true;//return true
+                    return 1;//return true
                 }
             }
 	    //add assignment to student:

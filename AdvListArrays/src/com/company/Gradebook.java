@@ -17,44 +17,44 @@ public class Gradebook {
         }
     //Methods:
         //change section
-            public boolean changeSection(String sectionName){//sets the currently active section
-                if(getCurrentSection().equals(sectionName)) {//else if sectionName already active...
-                    return false;//return false
+            public int changeSection(String sectionName){//sets the currently active section
+                if(getCurrentSection().getSectionName().equals(sectionName)) {//else if sectionName already active...
+                    return 0;//return 0 if false
                 }
                 int sectionIndex =  getSectionIndexBySectionName(sectionName);
                 if(sectionIndex == -1){//if sectionName not found...
-                    return false;//return false
+                    return -1;//return -1 if false
                 }
                 else {//else...
                     CurrentSection = sectionName;//switch current section to searched section
-                    return true;//return true
+                    return 1;//return 1 if true
                 }
             }
 	    //add section
-            public boolean addSection(String sectionName){//creates a new section if there are not already 6 sections and sectionName isn't already used
+            public int addSection(String sectionName){//creates a new section if there are not already 6 sections and sectionName isn't already used
                 if(Sections.size()==6) {//if 6 sections already...
-                    return false;//return false
+                    return 0;//return 0 if false
                 }
                 int sectionIndex = getSectionIndexBySectionName(sectionName);
                 if(sectionIndex != -1) {//if sectionName used already...
-                    return false;//return false
+                    return -1;//return -1 if false
                 }
                 else {//else...
                     Sections.add(new Sections(sectionName));//create new section and add to sections list
                     CurrentSection = sectionName;//set new section as the current section
-                    return true;//return true
+                    return 1;//return 1 if true
                 }
             }
 	    //add student
-            public boolean addStudent(String firstName, String lastName, String username, long phoneNumber){//creates a new student
+            public int addStudent(String firstName, String lastName, String username, long phoneNumber){//creates a new student
                 if(Sections.size() == 0) {//if no sections...
-                    return false;//return false
+                    return 0;//return 0 if false
                 }
                 Sections currSection = getCurrentSection();//get current section
                 if (currSection == null){//if the currSection == null...
-                    return false;//return false
+                    return -2;//return -2 if false
                 }
-                boolean retVal = currSection.addStudent(firstName, lastName, username, phoneNumber);//add student to active section
+                int retVal = currSection.addStudent(firstName, lastName, username, phoneNumber);//add student to active section
                 return retVal;
             }
 	    //add assignment to student
