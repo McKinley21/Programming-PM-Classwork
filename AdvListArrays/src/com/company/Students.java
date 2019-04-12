@@ -34,19 +34,19 @@ public class Students {
                 if (assignmentIndex != -1) {//if assignment exists...
                     return false;//return false
                 } else {//else...
-                    Assignments.add(new Assignments(assignmentName, pointsPossible));//create new assignment and add to assignments list
-                    return true;//return true
+                    return Assignments.add(new Assignments(assignmentName, pointsPossible));//create new assignment and add to assignments list
                 }
             }
         //set score:
-            public boolean setScore(String assignmentName, int pointsEarned){
+            public String setScore(String assignmentName, int pointsEarned){
                 int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
                 if (assignmentIndex != -1) {//if assignment doesn't exists...
-                    return false;//return false
+                    return "-1";//return "-1" if false
                 } else {//else...
                     Assignments searchedAssignment = Assignments.get(assignmentIndex);
-                    boolean retVal = searchedAssignment.setScore(searchedAssignment,pointsEarned);
-                    return retVal;//return retVal
+                    int retVal = searchedAssignment.setScore(searchedAssignment,pointsEarned);
+                    String scoreOutOfPointsPossible = retVal + "/" + searchedAssignment.getPointsPossible();
+                    return scoreOutOfPointsPossible;//return scoreOutOfPointsPossible
                 }
             }
         //mark tardy:

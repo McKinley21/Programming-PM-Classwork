@@ -28,46 +28,52 @@ public class Sections {
                 }
             }
 	    //add assignment to student:
-            public boolean addAssignmentToStudent(String username, String assignmentName, int pointsPossible){
+            public int addAssignmentToStudent(String username, String assignmentName, int pointsPossible){//FIXME
                 Students currStudent = getCurrentStudent(username);//get the student specified by username
+                int addAssignment = 0;
                 if(currStudent == null) {//if student not found...
-                    return false;//return false
+                    return 0;//return false
                 }
                 else {//else...
-                    currStudent.addAssignmentToStudent(assignmentName,pointsPossible);//add a assignment to the specified student
-                    return true;//return true
+                    boolean bool = currStudent.addAssignmentToStudent(assignmentName,pointsPossible);//add a assignment to the specified student
+                    if (bool = false){
+                        addAssignment = -1;
+                    }
+                    else {
+
+                    }
+                    return addAssignment;
                 }
             }
 	    //add assignment to section:
-            public boolean addAssignmentToSection(Sections currSection, String assignmentName, int pointsPossible){
+            public int addAssignmentToSection(Sections currSection, String assignmentName, int pointsPossible){
                 if(currSection.Students.isEmpty()) {//if students not found...
-                    return false;//return false
+                    return -2;//return -2 if false
                 }
                 else {//else...
                     int studentIndex = 0;
                     while (studentIndex < currSection.Students.size()){
                         Students currStudent = currSection.Students.get(studentIndex);
                         if(currStudent == null) {//if student not found...
-                            return false;//return false
+                            return -3;//return -3 if false
                         }
                         else {//else...
                             currStudent.addAssignmentToStudent(assignmentName,pointsPossible);//add a assignment to each student in the current section
                         }
                         studentIndex++;
                     }
-                    System.out.println(sectionName + " has a new assignment: " + assignmentName);
-                    return true;//return true
+                    return 1;//return 1 if true
                 }
             }
 	    //set score:
-            public boolean setScore(String username, String assignmentName, int pointsEarned){
+            public String setScore(String username, String assignmentName, int pointsEarned){
                 Students currStudent = getCurrentStudent(username);//get the student specified by username
                 if(currStudent == null) {//if student not found...
-                    return false;//return false
+                    return "0";//return "0" if false
                 }
                 else {//else...
-                    currStudent.setScore(assignmentName,pointsEarned);//set the score for the student's assignment
-                    return true;//return true
+                    String score = currStudent.setScore(assignmentName,pointsEarned);//set the score for the student's assignment
+                    return score;//return score if true
                 }
             }
 	    //mark tardy:

@@ -1,57 +1,26 @@
-|_____________________|
-|changeSection:	PASSED|
-|_____________________|
-|addSection:	PASSED|
-|_____________________|
+|_______________________________|
+|changeSection:		  PASSED|
+|_______________________________|
+|addSection:		  PASSED|
+|_______________________________|
+|addStudents:		  PASSED|
+|_______________________________|
+|addAssignmentToStudent:  PASSED|
+|_______________________________|
+|addAssignmentToSection:  PASSED|
+|_______________________________|
 -----------------------------------------------------------------------
-|addStudents:		   			      |
+|markTardy:		   			      |
 |_____________________________________________________|
-|			   |1.Test Successful	      |//can't add student w/o section
-|			   |2.Test Successful	      |//adds student to the current section
-|			   |3.Test Successful	      |//adds a second student to the same section(same first name, different username)
-|			   |4.Test Successful	      |//adds a third student to the same section(same last name, different username)
-|			   |5.Test Successful	      |//adds a fourth student to the same section(same first and last name and phone number, different username)
-|			   |6.Test Successful	      |//adds a fifth student to the same section(same phone number, different username, and first and last names)
-|                          |7.Test Successful	      |//adds a sixth student to the same section(different name, same username)
-|                          |8.Test Successful	      |//adds a seventh student to the same section(first name w/ numbers)
-|                          |9.Test Successful	      |//adds an eighth student to the same section(last name w/ numbers)
-|			   |10.Test Successful	      |//adds a ninth student to the same section(username w/ symbols)
-|xxxxxxxxxxxxxxxxxxxxxxxxxx|11.Test Failed	      |//adds a tenth student to the same section(phone number w/ words and symbols)
-|xxxxxxxxxxxxxxxxxxxxxxxxxx|12.Test Failed	      |//adds an eleventh student to the same section(phone number w/ less than 10 digits)
-|xxxxxxxxxxxxxxxxxxxxxxxxxx|13.Test Failed	      |//adds a twelfth student to the same section(phone number w/ more than 10 digits)
-|			   |14.Test Successful	      |//adds a thirteenth student to the same section(usernames w/o numbers and symbols)
-|			   |15.Test Successful	      |//adds a student to a different section
+|			   |1.Test Successful	      |
+|			   |2.			      |
+|			   |3.			      |
 |__________________________|__________________________|
-|getOverallScore:	   			      |
+|markAbsent:		   			      |
 |_____________________________________________________|
 |			   |1.			      |
 |			   |2.			      |
 |			   |3.			      |
-|			   |4.			      |
-|__________________________|__________________________|
-|getOverallScoreAvg:	   			      |
-|_____________________________________________________|
-|			   |1.			      |
-|			   |2.			      |
-|			   |3.			      |
-|			   |4.			      |
-|			   |5.			      |
-|__________________________|__________________________|
-|addAssignmentToStudent:   			      |
-|_____________________________________________________|
-|			   |1.			      |
-|			   |2.			      |
-|			   |3.			      |
-|			   |4.			      |
-|			   |5.			      |
-|__________________________|__________________________|
-|addAssignmentToSection:   			      |
-|_____________________________________________________|
-|			   |1.			      |
-|			   |2.			      |
-|			   |3.			      |
-|			   |4.			      |
-|			   |5.			      |
 |__________________________|__________________________|
 |setScore:		   			      |
 |_____________________________________________________|
@@ -60,6 +29,21 @@
 |	  		   |3.			      |
 |	  		   |4.			      |
 |	  		   |5.			      |
+|__________________________|__________________________|
+|getOverallScore:	   			      |
+|_____________________________________________________|
+|xxxxxxxxxxxxxxxxxxxxxxxxxx|1.Test Failed	      |
+|xxxxxxxxxxxxxxxxxxxxxxxxxx|2.Test Failed	      |
+|xxxxxxxxxxxxxxxxxxxxxxxxxx|3.Test Failed	      |
+|xxxxxxxxxxxxxxxxxxxxxxxxxx|4.Test Failed	      |
+|__________________________|__________________________|
+|getOverallScoreAvg:	   			      |
+|_____________________________________________________|
+|			   |1.			      |
+|			   |2.			      |
+|			   |3.			      |
+|			   |4.			      |
+|			   |5.			      |
 |__________________________|__________________________|
 |getAssignmentScorePercent:			      |
 |_____________________________________________________|
@@ -77,18 +61,6 @@
 |			   |3.			      |
 |			   |4.			      |
 |			   |5.			      |
-|__________________________|__________________________|
-|markTardy:		   			      |
-|_____________________________________________________|
-|			   |1.			      |
-|			   |2.			      |
-|			   |3.			      |
-|__________________________|__________________________|
-|markAbsent:		   			      |
-|_____________________________________________________|
-|			   |1.			      |
-|			   |2.			      |
-|			   |3.			      |
 |__________________________|__________________________|
 |getTardyCount:		   			      |
 |_____________________________________________________|

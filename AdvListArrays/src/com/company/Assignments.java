@@ -16,9 +16,8 @@ public class Assignments {
         }
     //Methods:
         //set score:
-            public boolean setScore(Assignments searchedAssignment, int pointsEarned){
-                searchedAssignment.pointsEarned = pointsEarned;
-                return true;
+            public int setScore(Assignments searchedAssignment, int pointsEarned){
+                return searchedAssignment.pointsEarned = pointsEarned;
             }
         //get assignment score:
             public double getAssignmentScorePercent(Assignments searchedAssignment){
@@ -30,5 +29,8 @@ public class Assignments {
         //other methods:
             public String getAssignmentName() {
                 return assignmentName;
+            }
+            public int getPointsPossible() {
+                return pointsPossible;
             }
 }

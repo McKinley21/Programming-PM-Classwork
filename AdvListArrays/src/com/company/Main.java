@@ -9,20 +9,20 @@ public class Main {
         Scanner console = new Scanner(System.in);
         while (true) {
             System.out.println("Type one of the following commands:");
-            System.out.println("change section");//1
-            System.out.println("add section");//2
-            System.out.println("add student");//3
+            System.out.println("change section");
+            System.out.println("add section");
+            System.out.println("add student");
             System.out.println("add assignment to student");//4
             System.out.println("add assignment to section");//5
             System.out.println("set score");//6
             System.out.println("mark tardy");//7
-            System.out.println("mark absent");
-            System.out.println("get overall score");
-            System.out.println("get overall score avg");
-            System.out.println("get assignment score");
-            System.out.println("get assignment score avg");
-            System.out.println("get tardy count");
-            System.out.println("get absent count");
+            System.out.println("mark absent");//8
+            System.out.println("get overall score");//9
+            System.out.println("get overall score avg");//10
+            System.out.println("get assignment score");//11
+            System.out.println("get assignment score avg");//12
+            System.out.println("get tardy count");//13
+            System.out.println("get absent count");//14
             String command = console.nextLine();
             if (command.equals("change section")) {//change section
                 System.out.println("Enter Section Name:");
@@ -73,15 +73,34 @@ public class Main {
                             } else {
                                 System.out.println("Enter the Student's Username:");
                                 String username = console.nextLine();
-                                System.out.println("Enter the Student's Phone Number:");
-                                long phoneNumber = Long.parseLong(console.nextLine());
-                                int addStudent = Gradebook.addStudent(firstName, lastName, username, phoneNumber);
-                                if (addStudent == 1) {//true
-                                    System.out.println(firstName + " " + lastName + " has been added to " + currentSection + ".");
-                                } else if (addStudent == 0) {//false
-                                    System.out.println("Can't add student(There are 0 sections to add them to).");
-                                } else if (addStudent == -1) {//false
-                                    System.out.println("The entered Username, " + username + ", is already used.");
+                                while (true) {
+                                    System.out.println("Enter the Student's Phone Number:");
+                                    try {
+                                        long phoneNumber = Long.parseLong(console.nextLine());
+                                        int length = String.valueOf(phoneNumber).length();
+                                        if (length < 10){
+                                            System.out.println("Phone Number can't have less than 10 digits.");
+                                            continue;
+                                        }
+                                        else if (length > 10){
+                                            System.out.println("Phone Number can't have more than 10 digits.");
+                                            continue;
+                                        }
+                                        else if (length == 10) {
+                                            int addStudent = Gradebook.addStudent(firstName, lastName, username, phoneNumber);
+                                            if (addStudent == 1) {//true
+                                                System.out.println(firstName + " " + lastName + " has been added to " + currentSection + ".");
+                                            } else if (addStudent == 0) {//false
+                                                System.out.println("Can't add student(There are 0 sections to add them to).");
+                                            } else if (addStudent == -1) {//false
+                                                System.out.println("The entered Username, " + username + ", is already used.");
+                                            }
+                                        }
+                                    } catch (NumberFormatException wordsSymbols) {
+                                        System.out.println("Phone Number can't include words and symbols.");
+                                        continue;
+                                    }
+                                    break;
                                 }
                             }
                             break;
@@ -96,37 +115,79 @@ public class Main {
                 String username = console.nextLine();
                 System.out.println("Enter Assignment Name:");
                 String assignmentName = console.nextLine();
-                System.out.println("Enter Max Amount of Points Possible:");
-                int pointsPossible = Integer.parseInt(console.nextLine());
-                boolean addAssignmentToStudent = Gradebook.addAssignmentToStudent(username,assignmentName,pointsPossible);
-                if (addAssignmentToStudent = true){
-                    System.out.println(username + " has a new assignment: " + assignmentName);
+                while (true) {
+                    System.out.println("Enter Max Amount of Points Possible:");
+                    try {
+                        int pointsPossible = Integer.parseInt(console.nextLine());
+                        if (pointsPossible < 0){
+                            System.out.println("Invalid Amount of Points Possible.");
+                            continue;
+                        }
+                        else if (pointsPossible > 0){
+                            int addAssignmentToStudent = Gradebook.addAssignmentToStudent(username, assignmentName, pointsPossible);
+                            if (addAssignmentToStudent == 1) {//true
+                                System.out.println(username + " has a new assignment: " + assignmentName);
+                            } else if (addAssignmentToStudent == 0) {//false
+                                System.out.println("Can't add assignment(" + username + " not found).");
+                            }else if (addAssignmentToStudent == -1){//false
+                                System.out.println(assignmentName + " is already added to " + username + ".");
+                            }
+                        }
+                    } catch (NumberFormatException words) {
+                        System.out.println("Invalid Amount of Points Possible.");
+                        continue;
+                    }
+                    break;
                 }
-                continue;
             }
             else if (command.equals("add assignment to section")) {//add assignment to section
                 System.out.println("Enter Section Name:");
                 String sectionName = console.nextLine();
                 System.out.println("Enter Assignment Name:");
                 String assignmentName = console.nextLine();
-                System.out.println("Enter Max Amount of Points Possible:");
-                int pointsPossible = Integer.parseInt(console.nextLine());
-                boolean addAssignmentToSection = Gradebook.addAssignmentToSection(assignmentName,pointsPossible);
-                if (addAssignmentToSection = true){
-                    System.out.println( sectionName + " has a new assignment: " + assignmentName);
+                while (true) {
+                    System.out.println("Enter Max Amount of Points Possible:");
+                    try {
+                        int pointsPossible = Integer.parseInt(console.nextLine());
+                        if (pointsPossible < 0){
+                            System.out.println("Invalid Amount of Points Possible.");
+                            continue;
+                        }
+                        else if (pointsPossible > 0) {
+                            int addAssignmentToSection = Gradebook.addAssignmentToSection(assignmentName, pointsPossible);
+                            if (addAssignmentToSection == 1) {//true
+                                System.out.println(sectionName + " has a new assignment: " + assignmentName);
+                            } else if (addAssignmentToSection == 0) {//false
+                                System.out.println("Can't add assignment(" + sectionName + " not found).");
+                            }else if (addAssignmentToSection == -1){//false
+                                System.out.println(assignmentName + " is already added to " + sectionName + ".");
+                            }else if (addAssignmentToSection == -2) {//false
+                                System.out.println("Can't add assignment(There are 0 students in " + sectionName + " to add it to).");
+                            }
+                        }
+                    } catch (NumberFormatException words) {
+                        System.out.println("Invalid Amount of Points Possible.");
+                        continue;
+                    }
+                    break;
                 }
-                continue;
             }
-            else if (command.equals("set score")) {//set score
+            else if (command.equals("set score")) {//set score//FIXME
                 System.out.println("Enter Student Username:");
                 String username = console.nextLine();
                 System.out.println("Enter Assignment Name:");
                 String assignmentName = console.nextLine();
                 System.out.println("Enter Points Earned:");
                 int pointsEarned = Integer.parseInt(console.nextLine());
-                boolean setScore = Gradebook.setScore(username,assignmentName,pointsEarned);
-                if (setScore = true){
-                    System.out.println(username + "'s " + assignmentName + " has been graded: " + pointsEarned + "/" + "GET_POINTS_POSSIBLE");//FIXME
+                String setScore = Gradebook.setScore(username,assignmentName,pointsEarned);
+                if (setScore.equals("0")){
+                    System.out.println("Can't set score(There are 0 students to set it for.");
+                }
+                else if (setScore.equals("-1")){
+                    System.out.println(username + " has 0 assignments.");
+                }
+                else{
+                    System.out.println(username + "'s " + assignmentName + " has been graded: " + setScore);//FIXME
                 }
             }
             else if (command.equals("mark tardy")) {//mark tardy

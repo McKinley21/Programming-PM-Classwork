@@ -58,37 +58,38 @@ public class Gradebook {
                 return retVal;
             }
 	    //add assignment to student
-            public boolean addAssignmentToStudent(String username, String assignmentName, int pointsPossible){//creates a new assignment for a specified student
+            public int addAssignmentToStudent(String username, String assignmentName, int pointsPossible){//creates a new assignment for a specified student
                 if(Sections.size() == 0) {//if no sections...
-                    return false;//return false
+                    return 0;//return 0 if false
                 }
                 Sections currSection = getCurrentSection();//get current section
                 if (currSection == null){//if the currSection == null...
-                    return false;//return false
+                    return -2;//return -2 if false
                 }
-                boolean retVal = currSection.addAssignmentToStudent(username,assignmentName,pointsPossible);//add assignment to the specified student
+                int retVal = currSection.addAssignmentToStudent(username,assignmentName,pointsPossible);//add assignment to the specified student
+                //FIXME
                 return retVal;
             }
 	    //add assignment to section
-            public boolean addAssignmentToSection(String assignmentName, int pointsPossible) {//creates a new assignment for a section
+            public int addAssignmentToSection(String assignmentName, int pointsPossible) {//creates a new assignment for a section
                 if(Sections.size() == 0) {//if no sections...
-                    return false;//return false
+                    return 0;//return 0 if false
                 }
                 Sections currSection = getCurrentSection();//get current section
                 if (currSection == null){//if the currSection == null...
-                    return false;//return false
+                    return -3;//return -3 if false
                 }
-                boolean retVal = currSection.addAssignmentToSection(currSection,assignmentName,pointsPossible);//add assignment to the specified section
+                int retVal = currSection.addAssignmentToSection(currSection,assignmentName,pointsPossible);//add assignment to the specified section
                 return retVal;
             }
 	    //set score
-            public boolean setScore(String username, String assignmentName, int pointsEarned){//set a score for a specified assignment
+            public String setScore(String username, String assignmentName, int pointsEarned){//set a score for a specified assignment
                 if(Sections.size() == 0) {//if no sections...
-                    return false;//return false
+                    return "0";//return "0" false
                 }
                 Sections currSection = getCurrentSection();//get current section
                 if (currSection == null){//if the currSection == null...
-                    return false;//return false
+                    return "-2";//return "-2" if false
                 }
                 return currSection.setScore(username, assignmentName, pointsEarned);//set the specified student and assignment's score
             }
