@@ -12,12 +12,12 @@ public class Main {
             System.out.println("change section");
             System.out.println("add section");
             System.out.println("add student");
-            System.out.println("add assignment to student");//4
-            System.out.println("add assignment to section");//5
-            System.out.println("set score");//6
-            System.out.println("mark tardy");//7
-            System.out.println("mark absent");//8
-            System.out.println("get overall score");//9
+            System.out.println("add assignment to student");
+            System.out.println("add assignment to section");
+            System.out.println("set score");
+            System.out.println("mark tardy");
+            System.out.println("mark absent");
+            System.out.println("get overall score");
             System.out.println("get overall score avg");//10
             System.out.println("get assignment score");//11
             System.out.println("get assignment score avg");//12
@@ -172,85 +172,172 @@ public class Main {
                     break;
                 }
             }
-            else if (command.equals("set score")) {//set score//FIXME
+            else if (command.equals("set score")) {//set score
                 System.out.println("Enter Student Username:");
                 String username = console.nextLine();
                 System.out.println("Enter Assignment Name:");
                 String assignmentName = console.nextLine();
-                System.out.println("Enter Points Earned:");
-                int pointsEarned = Integer.parseInt(console.nextLine());
-                String setScore = Gradebook.setScore(username,assignmentName,pointsEarned);
-                if (setScore.equals("0")){
-                    System.out.println("Can't set score(There are 0 students to set it for.");
-                }
-                else if (setScore.equals("-1")){
-                    System.out.println(username + " has 0 assignments.");
-                }
-                else{
-                    System.out.println(username + "'s " + assignmentName + " has been graded: " + setScore);//FIXME
+                while (true) {
+                    System.out.println("Enter Points Earned:");
+                    try {
+                        int pointsEarned = Integer.parseInt(console.nextLine());
+                        if (pointsEarned < 0) {
+                            System.out.println("Invalid Amount of Points Earned.");
+                            continue;
+                        } else if (pointsEarned > 0) {
+                            int setScore = Gradebook.setScore(username, assignmentName, pointsEarned);
+                            if (setScore == 1) {//true
+                                System.out.println(username + "'s " + assignmentName + " has been graded.");
+                                break;
+                            } else if (setScore == 0) {//false
+                                System.out.println(username + " has 0 assignments.");
+                                break;
+                            } else if (setScore == -1) {//false
+                                System.out.println(username + " not found.");
+                                break;
+                            } else if (setScore == -2) {//false
+                                System.out.println(assignmentName + " not found.");
+                                break;
+                            } else if (setScore == -3) {//false
+                                System.out.println("Invalid Amount of Points Earned.");
+                                continue;
+                            }
+                        }
+                    } catch (NumberFormatException words) {
+                        System.out.println("Invalid Amount of Points Earned.");
+                        continue;
+                    }
                 }
             }
             else if (command.equals("mark tardy")) {//mark tardy
-                System.out.println("Enter Student Username:");
-                String username = console.nextLine();
-                boolean markTardy = Gradebook.markTardy(username);
-                if (markTardy = true){
-                    System.out.println(username + " has been marked tardy.");
+                while (true) {
+                    System.out.println("Enter Student Username:");
+                    String username = console.nextLine();
+                    int markTardy = Gradebook.markTardy(username);
+                    if (markTardy == 1) {//true
+                        System.out.println(username + " has been marked tardy.");
+                        break;
+                    } else if (markTardy == 0) {//false
+                        System.out.println("Can't mark a student tardy(There are 0 students to add it to).");
+                        break;
+                    } else if (markTardy == -1) {//false
+                        System.out.println(username + " not found.");
+                        continue;
+                    }
                 }
                 continue;
             }
             else if (command.equals("mark absent")) {//mark absent
-                System.out.println("Enter Student Username:");
-                String username = console.nextLine();
-                boolean markAbsent = Gradebook.markAbsent(username);
-                if (markAbsent = true){
-                    System.out.println(username + " has been marked absent.");
+                while (true) {
+                    System.out.println("Enter Student Username:");
+                    String username = console.nextLine();
+                    int markAbsent = Gradebook.markAbsent(username);
+                    if (markAbsent == 1) {//true
+                        System.out.println(username + " has been marked absent.");
+                        break;
+                    } else if (markAbsent == 0) {//false
+                        System.out.println("Can't mark a student absent(There are 0 students to add it to).");
+                        break;
+                    } else if (markAbsent == -1) {//false
+                        System.out.println(username + " not found.");
+                        continue;
+                    }
                 }
                 continue;
             }
             else if (command.equals("get overall score")) {//get overall score
-                System.out.println("Enter Student Username:");
-                String username = console.nextLine();
-                boolean getOverallScore = Gradebook.getOverallScore(username);
+                while (true) {
+                    System.out.println("Enter Student Username:");
+                    String username = console.nextLine();
+                    int getOverallScore = Gradebook.getOverallScore(username);
+                    if (getOverallScore == 1) {//true
+                        break;
+                    }
+                    else if (getOverallScore == 0) {//false
+                        System.out.println("Can't get overall score(There are 0 students to search for).");
+                        break;
+                    } else if (getOverallScore == -1) {//false
+                        System.out.println(username + " not found.");
+                        continue;
+                    }
+                }
                 continue;
             }
             else if (command.equals("get overall score avg")) {//get overall score avg
-                System.out.println("Enter Section Name:");
-                String sectionName = console.nextLine();
-                boolean getOverallScoreAvg = Gradebook.getOverallScoreAvg(sectionName);
+                while (true) {
+                    System.out.println("Enter Section Name:");
+                    String sectionName = console.nextLine();
+                    int getOverallScoreAvg = Gradebook.getOverallScoreAvg(sectionName);
+                    if (getOverallScoreAvg == 1) {//true
+                        break;
+                    } else if (getOverallScoreAvg == 0) {//false
+                        System.out.println("Can't get overall score avg(There are 0 sections to search for).");
+                        break;
+                    } else if (getOverallScoreAvg == -1) {//false
+                        System.out.println(sectionName + " not found.");
+                        continue;
+                    }
+                }
                 continue;
             }
             else if (command.equals("get assignment score")) {//get assignment score
                 System.out.println("Enter Student Username:");
                 String username = console.nextLine();
-                System.out.println("Enter Assignment Name:");
-                String assignmentName = console.nextLine();
-                boolean getAssignmentScorePercent = Gradebook.getAssignmentScorePercent(username,assignmentName);
+                while (true) {
+                    System.out.println("Enter Assignment Name:");
+                    String assignmentName = console.nextLine();
+                    int getAssignmentScorePercent = Gradebook.getAssignmentScorePercent(username, assignmentName);
+                    if (getAssignmentScorePercent == 1) {//true
+                        break;
+                    } else if (getAssignmentScorePercent == 0) {//false
+                        System.out.println("Can't get assignment score(There are 0 assignments to get it from).");
+                        break;
+                    } else if (getAssignmentScorePercent == -1) {//false
+                        System.out.println(username + " not found.");
+                        break;
+                    } else if (getAssignmentScorePercent == -2) {//false
+                        System.out.println(assignmentName + " not found.");
+                        continue;
+                    }
+                }
                 continue;
             }
             else if (command.equals("get assignment score avg")) {//get assignment score avg
-                System.out.println("Enter Section Name:");
-                String sectionName = console.nextLine();
-                System.out.println("Enter Assignment Name:");
-                String assignmentName = console.nextLine();
-                boolean getAssignmentScoreAvg = Gradebook.getAssignmentScoreAvg(assignmentName);
-                continue;
+                //FIXME
             }
             else if (command.equals("get tardy count")) {//get tardy count
-                System.out.println("Enter Student Username:");
-                String username = console.nextLine();
-                int getTardyCount = Gradebook.getTardyCount(username);
-                if (getTardyCount !=-1){
-                    System.out.println(username + "'s tardy count: " + getTardyCount);
+                while (true) {
+                    System.out.println("Enter Student Username:");
+                    String username = console.nextLine();
+                    int getTardyCount = Gradebook.getTardyCount(username);
+                    if (getTardyCount > -1) {
+                        System.out.println(username + "'s tardy count: " + getTardyCount);
+                        break;
+                    } else if (getTardyCount == -1) {
+                        System.out.println("Can't get a student's tardy count(There are 0 students to get it from).");
+                        break;
+                    } else if (getTardyCount == -2) {
+                        System.out.println(username + " not found.");
+                        continue;
+                    }
                 }
                 continue;
             }
             else if (command.equals("get absent count")) {//get absent count
-                System.out.println("Enter Student Username:");
-                String username = console.nextLine();
-                int getAbsentCount = Gradebook.getAbsentCount(username);
-                if (getAbsentCount !=-1){
-                    System.out.println(username + "'s tardy count: " + getAbsentCount);
+                while (true) {
+                    System.out.println("Enter Student Username:");
+                    String username = console.nextLine();
+                    int getAbsentCount = Gradebook.getAbsentCount(username);
+                    if (getAbsentCount > -1) {
+                        System.out.println(username + "'s tardy count: " + getAbsentCount);
+                        break;
+                    } else if (getAbsentCount == -1) {
+                        System.out.println("Can't get a student's tardy count(There are 0 students to get it from).");
+                        break;
+                    } else if (getAbsentCount == -2) {
+                        System.out.println(username + " not found.");
+                        continue;
+                    }
                 }
                 continue;
             }

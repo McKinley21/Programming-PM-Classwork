@@ -5,32 +5,40 @@ package com.company;
  */
 public class Assignments {
     //Properties:
-        private String assignmentName;// assignmentName (String)
-        private int pointsPossible;// pointsPossible (int)
-        private int pointsEarned;// pointsEarned (int)
+    private String assignmentName;// assignmentName (String)
+    private int pointsPossible;// pointsPossible (int)
+    private int pointsEarned;// pointsEarned (int)
+
     //Constructors:
-        public Assignments(String assignmentName, int pointsPossible) {
-            this.assignmentName = assignmentName;//set assignmentName
-            this.pointsPossible = pointsPossible;//set pointsPossible
-            this.pointsEarned = 0;//set pointsEarned to 0
-        }
+    public Assignments(String assignmentName, int pointsPossible) {
+        this.assignmentName = assignmentName;//set assignmentName
+        this.pointsPossible = pointsPossible;//set pointsPossible
+        this.pointsEarned = 0;//set pointsEarned to 0
+    }
+
     //Methods:
-        //set score:
-            public int setScore(Assignments searchedAssignment, int pointsEarned){
-                return searchedAssignment.pointsEarned = pointsEarned;
-            }
-        //get assignment score:
-            public double getAssignmentScorePercent(Assignments searchedAssignment){
-                double pointsEarned = searchedAssignment.pointsEarned;
-                double pointsPossible = searchedAssignment.pointsPossible;
-                double score = pointsEarned/pointsPossible;
-                return score;
-            }
-        //other methods:
-            public String getAssignmentName() {
-                return assignmentName;
-            }
-            public int getPointsPossible() {
-                return pointsPossible;
-            }
+    //set score:
+    public int setScore(Assignments searchedAssignment, int pointsEarned) {
+        if (pointsEarned > pointsPossible) {
+            return -3;//return -3 if false
+        } else {
+            searchedAssignment.pointsEarned = pointsEarned;//set pointsEarned accordingly
+            return 1;//return 1 if true
+        }
+    }
+
+    //get assignment score:
+    public double getAssignmentScorePercent(Assignments searchedAssignment) {
+        //FIXME
+        return 0;
+    }
+
+    //other methods:
+    public String getAssignmentName() {
+        return assignmentName;
+    }
+
+    public int getPointsPossible() {
+        return pointsPossible;
+    }
 }

@@ -1128,43 +1128,6 @@ JohnSmith121   	 |
 JohnSmith123   	 |
 	      	 |John's Overall Score: 100%
 ______________________________________________________________________________
-//can't get overall score(no assignments)
-Input		 |Output
-      	      	 |Type one of the following commands:
-	      	 |change section
-	      	 |add section
-	      	 |add student
-	      	 |add assignment to student
-	      	 |add assignment to section
-	      	 |set score
-	      	 |mark tardy
-	      	 |mark absent
-	      	 |get overall score
-	      	 |get overall score avg
-	      	 |get assignment score
-	      	 |get assignment score avg
-	      	 |get tardy count
-	      	 |get absent count
-get overall score|
-	      	 |Enter Student Username:
-JohnSmith123   	 |
-	      	 |Can't get overall score(There are 0 assignments to get the score from).
-      	      	 |Type one of the following commands:
-	      	 |change section
-	      	 |add section
-	      	 |add student
-	      	 |add assignment to student
-	      	 |add assignment to section
-	      	 |set score
-	      	 |mark tardy
-	      	 |mark absent
-	      	 |get overall score
-	      	 |get overall score avg
-	      	 |get assignment score
-	      	 |get assignment score avg
-	      	 |get tardy count
-	      	 |get absent count
-______________________________________________________________________________
 ***************************************************************************************
 getOverallScoreAvg
 ______________________________________________________________________________
@@ -1187,80 +1150,6 @@ Input		     |Output
 	      	     |get absent count
 get overall score avg|
 	      	     |Can't get overall score avg(There are 0 sections to search for).
-      	      	     |Type one of the following commands:
-	      	     |change section
-	      	     |add section
-	      	     |add student
-	      	     |add assignment to student
-	      	     |add assignment to section
-	      	     |set score
-	      	     |mark tardy
-	      	     |mark absent
-	      	     |get overall score
-	      	     |get overall score avg
-	      	     |get assignment score
-	      	     |get assignment score avg
-	      	     |get tardy count
-	      	     |get absent count
-______________________________________________________________________________
-//can't get overall score average(no students)
-Input		     |Output
-      	      	     |Type one of the following commands:
-	      	     |change section
-	      	     |add section
-	      	     |add student
-	      	     |add assignment to student
-	      	     |add assignment to section
-	      	     |set score
-	      	     |mark tardy
-	      	     |mark absent
-	      	     |get overall score
-	      	     |get overall score avg
-	      	     |get assignment score
-	      	     |get assignment score avg
-	      	     |get tardy count
-	      	     |get absent count
-get overall score avg|
-		     |Enter Section Name:
-section1	     |
-	      	     |Can't get overall score avg(There are 0 students to get the score from).
-      	      	     |Type one of the following commands:
-	      	     |change section
-	      	     |add section
-	      	     |add student
-	      	     |add assignment to student
-	      	     |add assignment to section
-	      	     |set score
-	      	     |mark tardy
-	      	     |mark absent
-	      	     |get overall score
-	      	     |get overall score avg
-	      	     |get assignment score
-	      	     |get assignment score avg
-	      	     |get tardy count
-	      	     |get absent count
-______________________________________________________________________________
-//can't get overall score average(no section assignments)
-Input		     |Output
-      	      	     |Type one of the following commands:
-	      	     |change section
-	      	     |add section
-	      	     |add student
-	      	     |add assignment to student
-	      	     |add assignment to section
-	      	     |set score
-	      	     |mark tardy
-	      	     |mark absent
-	      	     |get overall score
-	      	     |get overall score avg
-	      	     |get assignment score
-	      	     |get assignment score avg
-	      	     |get tardy count
-	      	     |get absent count
-get overall score avg|
-		     |Enter Section Name:
-section1	     |
-	      	     |Can't get overall score avg(There are 0 assignments to get the score from).
       	      	     |Type one of the following commands:
 	      	     |change section
 	      	     |add section
@@ -1857,6 +1746,43 @@ JohnSmith123|
 	    |get tardy count
 	    |get absent count
 ______________________________________________________________________________
+//can't set assignment score(username not found)
+Input	        |Output
+	        |Type one of the following commands:
+	        |change section
+	        |add section
+	        |add student
+	        |add assignment to student
+	        |add assignment to section
+	        |set score
+	        |mark tardy
+	        |mark absent
+	        |get overall score
+	        |get overall score avg
+	        |get assignment score
+	        |get assignment score avg
+	        |get tardy count
+	        |get absent count
+set score       |
+	        |Enter Student Username:
+TestCasesSheets2|
+	        |TestCasesSheet2 not found.
+	        |Type one of the following commands:
+	        |change section
+	        |add section
+	        |add student
+	        |add assignment to student
+	        |add assignment to section
+	        |set score
+	        |mark tardy
+	        |mark absent
+	        |get overall score
+	        |get overall score avg
+	        |get assignment score
+	        |get assignment score avg
+	        |get tardy count
+	        |get absent count
+______________________________________________________________________________
 //can't set assignment score(assignment not found)
 Input	       |Output
 	       |Type one of the following commands:
@@ -1969,6 +1895,50 @@ JohnSmith123  |
 TestCasesSheet|
 	      |Enter Points Earned:
 -100	      |
+	      |Invalid amount of points earned.
+	      |Enter Points Earned:
+90	      |
+	      |JohnSmith123's TestCasesSheet has been graded: 90/100
+	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
+______________________________________________________________________________
+//can't set assignment score(points earned is greater than points possible)
+Input	      |Output
+	      |Type one of the following commands:
+	      |change section
+	      |add section
+	      |add student
+	      |add assignment to student
+	      |add assignment to section
+	      |set score
+	      |mark tardy
+	      |mark absent
+	      |get overall score
+	      |get overall score avg
+	      |get assignment score
+	      |get assignment score avg
+	      |get tardy count
+	      |get absent count
+set score     |
+	      |Enter Student Username:
+JohnSmith123  |
+	      |Enter Assignment Name:
+TestCasesSheet|
+	      |Enter Points Earned:
+1000	      |
 	      |Invalid amount of points earned.
 	      |Enter Points Earned:
 90	      |
@@ -2132,7 +2102,7 @@ get assignment score|
 JohnSmith123        |
 		    |Enter Assignment Name:
 TestCasesSheet      |
-		    |JohnSmith123's TestCasesSheeet hasn't been scored.
+		    |JohnSmith123's TestCasesSheet hasn't been scored.
 		    |Type one of the following commands:
 		    |change section
 		    |add section

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Students {
     //Properties:
     private ArrayList<Assignments> Assignments;// Assignments (List)
-        //create Assignments class
+    //create Assignments class
     private String firstName;// firstName (String)
     private String lastName;// lastName (String)
     private String username;// username (String)
@@ -28,92 +28,100 @@ public class Students {
     }
 
     //Methods:
-        //add assignment to student:
-            public boolean addAssignmentToStudent(String assignmentName, int pointsPossible) {
-                int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
-                if (assignmentIndex != -1) {//if assignment exists...
-                    return false;//return false
-                } else {//else...
-                    return Assignments.add(new Assignments(assignmentName, pointsPossible));//create new assignment and add to assignments list
-                }
+    //add assignment to student:
+    public boolean addAssignmentToStudent(String assignmentName, int pointsPossible) {
+        int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
+        if (assignmentIndex != -1) {//if assignment exists...
+            return false;//return false
+        } else {//else...
+            return Assignments.add(new Assignments(assignmentName, pointsPossible));//create new assignment and add to assignments list
+        }
+    }
+
+    //set score:
+    public int setScore(String assignmentName, int pointsEarned) {
+        int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
+        if (assignmentIndex != -1) {//if assignment exists...
+            Assignments currAssignment = Assignments.get(assignmentIndex);
+            return currAssignment.setScore(currAssignment, pointsEarned);//sets the score for the specified assignment
+        } else {//else...
+            return -2;//return -2 false
+        }
+    }
+
+    //mark tardy:
+    public void markTardy() {
+        daysTardy++;//marks a student tardy
+    }
+
+    //mark absent:
+    public void markAbsent() {
+        daysAbsent++;//marks a student absent
+    }
+
+    //get overall score:
+    public double getOverallScore(Students currStudent) {
+        double overallScore = 0;
+        int assignmentIndex = 0;
+        if (Assignments.size() == 0) {
+            overallScore = 100;
+            return overallScore;
+        } else if (Assignments.size() == 1) {
+            Assignments currAssignment = currStudent.Assignments.get(0);
+            overallScore = (currAssignment.getAssignmentScorePercent(currAssignment)) * 100;
+            return overallScore;
+        }
+        while (assignmentIndex < currStudent.Assignments.size()) {
+            Assignments currAssignment = currStudent.Assignments.get(assignmentIndex);
+            double currAssignmentPercent = currAssignment.getAssignmentScorePercent(currAssignment);
+            overallScore = overallScore + currAssignmentPercent;
+            assignmentIndex++;
+        }
+        overallScore = (overallScore / (assignmentIndex + 1)) * 100;
+        return overallScore;
+    }
+
+    //get assignment score:
+    public double getAssignmentScorePercent(String username, String assignmentName) {
+        int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
+        if (assignmentIndex != -1) {//if assignment exists...
+            Assignments currAssignment = Assignments.get(assignmentIndex);
+            return currAssignment.getAssignmentScorePercent(currAssignment);//sets the score for the specified assignment
+        } else {//else...
+            return -2;//return -2 if false
+        }
+    }
+
+    //get assignment score avg:
+    public double getAssignmentScoreAvg(String assignmentName) {
+        //FIXME
+        return 0;
+    }
+
+    //get tardy count:
+    public int getDaysTardy() {
+        return daysTardy;//gets a student's tardy count
+    }
+
+    //get absent count:
+    public int getDaysAbsent() {
+        return daysAbsent;//gets a student's absent count
+    }
+
+    //other methods:
+    private int getAssignmentIndexByAssignmentName(String assignmentName) {//search if given assignmentName is used already
+        int index = 0;
+        while (index < Assignments.size()) {
+            if (assignmentName.equalsIgnoreCase(Assignments.get(index).getAssignmentName())) {//if a assignment is found with the given assignmentName...
+                return index;//return the found index
             }
-        //set score:
-            public String setScore(String assignmentName, int pointsEarned){
-                int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
-                if (assignmentIndex != -1) {//if assignment doesn't exists...
-                    return "-1";//return "-1" if false
-                } else {//else...
-                    Assignments searchedAssignment = Assignments.get(assignmentIndex);
-                    int retVal = searchedAssignment.setScore(searchedAssignment,pointsEarned);
-                    String scoreOutOfPointsPossible = retVal + "/" + searchedAssignment.getPointsPossible();
-                    return scoreOutOfPointsPossible;//return scoreOutOfPointsPossible
-                }
-            }
-        //mark tardy:
-            public void markTardy() {
-                daysTardy++;//marks a student tardy
-            }
-        //mark absent:
-            public void markAbsent() {
-                daysAbsent++;//marks a student absent
-            }
-        //get overall score:
-            public double getOverallScore(Students currStudent){
-                double overallScore = 0;
-                int assignmentIndex = 0;
-                while (assignmentIndex < currStudent.Assignments.size()){
-                    Assignments currAssignment = currStudent.Assignments.get(assignmentIndex);
-                    double currAssignmentPercent = currAssignment.getAssignmentScorePercent(currAssignment);
-                    overallScore = overallScore + currAssignmentPercent;
-                    assignmentIndex++;
-                }
-                overallScore = overallScore/(assignmentIndex+1);
-                return overallScore;
-            }
-        //get assignment score:
-            public boolean getAssignmentScorePercent(String username, String assignmentName){
-                int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
-                if (assignmentIndex != -1) {//if assignment doesn't exists...
-                    return false;//return false
-                } else {//else...
-                    Assignments searchedAssignment = Assignments.get(assignmentIndex);
-                    double scorePercent = (searchedAssignment.getAssignmentScorePercent(searchedAssignment))*100;
-                    System.out.println(username + "'s " + assignmentName + " score: " + scorePercent + "%");
-                    return true;
-                }
-            }
-        //get assignment score avg:
-            public double getAssignmentScoreAvg(String assignmentName){
-                int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
-                if (assignmentIndex != -1) {//if assignment doesn't exists...
-                    return -1;//return -1
-                } else {//else...
-                    Assignments searchedAssignment = Assignments.get(assignmentIndex);
-                    double scorePercent = (searchedAssignment.getAssignmentScorePercent(searchedAssignment))*100;
-                    return scorePercent;
-                }
-            }
-        //get tardy count:
-            public int getDaysTardy() {
-                return daysTardy;//gets a student's tardy count
-            }
-        //get absent count:
-            public int getDaysAbsent() {
-                return daysAbsent;//gets a student's absent count
-            }
-        //other methods:
-            private int getAssignmentIndexByAssignmentName(String assignmentName) {//search if given assignmentName is used already
-                int index = 0;
-                while (index < Assignments.size()) {
-                    if (assignmentName.equalsIgnoreCase(Assignments.get(index).getAssignmentName())) {//if a assignment is found with the given assignmentName...
-                        return index;//return the found index
-                    }
-                    index++;
-                }
-                //if no assignment found with the given assignmentName...
-                return -1;//return -1
-            }
-            public String getUsername() {
-                return username;
-            }
+            index++;
+        }
+        //if no assignment found with the given assignmentName...
+        return -1;//return -1
+    }
+
+    public String getUsername() {
+        return username;
+    }
 }
