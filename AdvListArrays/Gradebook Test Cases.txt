@@ -2102,7 +2102,8 @@ get assignment score|
 JohnSmith123        |
 		    |Enter Assignment Name:
 TestCasesSheet      |
-		    |JohnSmith123's TestCasesSheet hasn't been scored.
+		    |JohnSmith123's TestCasesSheet score: 0%
+		    |(JohnSmith123's TestCasesSheet may not have been scored.)
 		    |Type one of the following commands:
 		    |change section
 		    |add section
@@ -2375,6 +2376,43 @@ Input			|Output
 			|get absent count
 get assignment score avg|
 			|Can't get  average assignment score(There are 0 sections to get it from).
+			|Type one of the following commands:
+			|change section
+			|add section
+			|add student
+			|add assignment to student
+			|add assignment to section
+			|set score
+			|mark tardy
+			|mark absent
+			|get overall score
+			|get overall score avg
+			|get assignment score
+			|get assignment score avg
+			|get tardy count
+			|get absent count
+______________________________________________________________________________
+//can't get assignment score average of a section(section not found)
+Input			|Output
+			|Type one of the following commands:
+			|change section
+			|add section
+			|add student
+			|add assignment to student
+			|add assignment to section
+			|set score
+			|mark tardy
+			|mark absent
+			|get overall score
+			|get overall score avg
+			|get assignment score
+			|get assignment score avg
+			|get tardy count
+			|get absent count
+get assignment score avg|
+			|Enter Section Name:
+sect1			|
+			|sect1 not found.
 			|Type one of the following commands:
 			|change section
 			|add section

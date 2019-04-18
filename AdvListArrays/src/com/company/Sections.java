@@ -118,6 +118,7 @@ public class Sections {
             overallScoreAvg = overallScoreAvg + currStudentOverallPercent;
             studentIndex++;
         }
+        overallScoreAvg = (overallScoreAvg/Students.size());
         return overallScoreAvg;
     }
 
@@ -127,16 +128,37 @@ public class Sections {
         if (currStudent == null) {//if student not found...
             return -1;//return -1 if false
         } else {//else...
-            double assignmentScorePercent = currStudent.getAssignmentScorePercent(username,assignmentName);//get the assignment score as a percentage for specified student
+            double assignmentScorePercent = currStudent.getAssignmentScorePercent(assignmentName);//get the assignment score as a percentage for specified student
+            if (assignmentScorePercent == -2){
+                return -2;
+            }
             System.out.println(username + "'s " + assignmentName +" Score: " + assignmentScorePercent + "%");
+            if (assignmentScorePercent == 0){
+                return -3;
+            }
             return 1;//return 1 if true
         }
     }
 
     //get assignment score avg:
-    public boolean getAssignmentScoreAvg(Sections currSection, String assignmentName) {
-        //FIXME
-        return false;
+    public double getAssignmentScoreAvg(Sections currSection, String assignmentName) {
+        double assignmentScoreAvg = 0;
+        int studentIndex = 0;
+        while (studentIndex < currSection.Students.size()) {
+            Students currStudent = currSection.Students.get(studentIndex);
+            double currStudentAssignmentScorePercent = currStudent.getAssignmentScorePercent(assignmentName);
+            if (currStudentAssignmentScorePercent == -5) {
+                return -5;
+            }
+            if (currStudentAssignmentScorePercent == -2){
+                assignmentScoreAvg = -2;
+                break;
+            }
+            assignmentScoreAvg = assignmentScoreAvg + currStudentAssignmentScorePercent;
+            studentIndex++;
+        }
+        assignmentScoreAvg = (assignmentScoreAvg / Students.size());
+        return assignmentScoreAvg;
     }
 
     //get tardy count:

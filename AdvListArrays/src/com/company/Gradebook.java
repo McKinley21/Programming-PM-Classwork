@@ -161,15 +161,37 @@ public class Gradebook {
         }
         Sections currSection = getCurrentSection();//get current section
         if (currSection == null) {//if the currSection == null...
-            return ;//return false
+            return -4;//return -4 if false
         }
         return currSection.getAssignmentScorePercent(username,assignmentName);//get the specified student's assignment score
     }
 
     //get assignment score avg
-    public boolean getAssignmentScoreAvg(String assignmentName) {//returns score as a percentage for current section
-        //FIXME
-        return false;
+    public int getAssignmentScoreAvg(String sectionName, String assignmentName) {//returns score as a percentage for current section
+        if (Sections.size() == 0) {//if no sections...
+            return 0;//return 0 if false
+        }
+        Sections currSection = getCurrentSection();//get current section
+        if (currSection == null) {//if the currSection == null...
+            return -4;//return false
+        }
+        int sectionIndex = getSectionIndexBySectionName(sectionName);
+        if (sectionIndex == -1) {//if sectionName not found...
+            return -1;//return -1 if false
+        } else {//if sectionName is found...
+            double assignmentScoreAvg = currSection.getAssignmentScoreAvg(currSection, assignmentName);//get the specified section's overall score
+            if (assignmentScoreAvg == -5) {
+                return 0;
+            }
+            if (assignmentScoreAvg == -2) {
+                return -2;
+            }
+            System.out.println(sectionName + "'s Avg " + assignmentName + " score: " + assignmentScoreAvg + "%");
+            if (assignmentScoreAvg == 0){
+                return -3;
+            }
+            return 1;
+        }
     }
 
     //get tardy count

@@ -1,5 +1,7 @@
 package com.company;
 
+import sun.invoke.empty.Empty;
+
 /**
  * Created by mh6900 on 2/20/2019.
  */
@@ -29,8 +31,9 @@ public class Assignments {
 
     //get assignment score:
     public double getAssignmentScorePercent(Assignments searchedAssignment) {
-        //FIXME
-        return 0;
+        double score = ((double) searchedAssignment.pointsEarned / searchedAssignment.pointsPossible);
+        double scorePercent = (score * 100);
+        return scorePercent;
     }
 
     //other methods:

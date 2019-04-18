@@ -298,12 +298,37 @@ public class Main {
                     } else if (getAssignmentScorePercent == -2) {//false
                         System.out.println(assignmentName + " not found.");
                         continue;
+                    } else if (getAssignmentScorePercent == -3) {//false
+                        System.out.println("(" + username + "'s " + assignmentName + " may not have been scored.)");
+                        break;
                     }
                 }
                 continue;
             }
             else if (command.equals("get assignment score avg")) {//get assignment score avg
-                //FIXME
+                System.out.println("Enter Section Name:");
+                String sectionName = console.nextLine();
+                while (true) {
+                    System.out.println("Enter Assignment Name:");
+                    String assignmentName = console.nextLine();
+                    int getAssignmentScoreAvg = Gradebook.getAssignmentScoreAvg(sectionName,assignmentName);
+                    if (getAssignmentScoreAvg == 1) {//true
+                        break;
+                    } else if (getAssignmentScoreAvg == 0) {//false
+                        System.out.println("Can't get assignment score(There are 0 assignments to get it from).");
+                        break;
+                    } else if (getAssignmentScoreAvg == -1) {//false
+                        System.out.println(sectionName + " not found.");
+                        break;
+                    } else if (getAssignmentScoreAvg == -2) {//false
+                        System.out.println(assignmentName + " not found.");
+                        continue;
+                    } else if (getAssignmentScoreAvg == -3) {//false
+                        System.out.println("(" + sectionName + "'s " + assignmentName + " may not have been scored.)");
+                        break;
+                    }
+                }
+                continue;
             }
             else if (command.equals("get tardy count")) {//get tardy count
                 while (true) {

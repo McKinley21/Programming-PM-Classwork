@@ -68,7 +68,7 @@ public class Students {
             return overallScore;
         } else if (Assignments.size() == 1) {
             Assignments currAssignment = currStudent.Assignments.get(0);
-            overallScore = (currAssignment.getAssignmentScorePercent(currAssignment)) * 100;
+            overallScore = (currAssignment.getAssignmentScorePercent(currAssignment));
             return overallScore;
         }
         while (assignmentIndex < currStudent.Assignments.size()) {
@@ -77,12 +77,15 @@ public class Students {
             overallScore = overallScore + currAssignmentPercent;
             assignmentIndex++;
         }
-        overallScore = (overallScore / (assignmentIndex + 1)) * 100;
+        overallScore = (overallScore / Assignments.size());
         return overallScore;
     }
 
     //get assignment score:
-    public double getAssignmentScorePercent(String username, String assignmentName) {
+    public double getAssignmentScorePercent(String assignmentName) {
+        if (Assignments.size() == 0){
+            return -5;
+        }
         int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
         if (assignmentIndex != -1) {//if assignment exists...
             Assignments currAssignment = Assignments.get(assignmentIndex);
@@ -90,12 +93,6 @@ public class Students {
         } else {//else...
             return -2;//return -2 if false
         }
-    }
-
-    //get assignment score avg:
-    public double getAssignmentScoreAvg(String assignmentName) {
-        //FIXME
-        return 0;
     }
 
     //get tardy count:
