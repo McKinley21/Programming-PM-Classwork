@@ -7,12 +7,12 @@ import java.util.ArrayList;
  */
 public class Students {
     //Properties:
-    private ArrayList<Assignments> Assignments;// Assignments (List)
+    private ArrayList<Assignments> Assignments;//Assignments (List)
     //create Assignments class
-    private String firstName;// firstName (String)
-    private String lastName;// lastName (String)
-    private String username;// username (String)
-    private long phoneNumber;// phoneNumber (long)
+    private String firstName;//firstName (String)
+    private String lastName;//lastName (String)
+    private String username;//username (String)
+    private long phoneNumber;//phoneNumber (long)
     private int daysAbsent;//daysAbsent (int)
     private int daysTardy;//daysTardy (int)
 
@@ -45,7 +45,7 @@ public class Students {
             Assignments currAssignment = Assignments.get(assignmentIndex);
             return currAssignment.setScore(currAssignment, pointsEarned);//sets the score for the specified assignment
         } else {//else...
-            return -2;//return -2 false
+            return -2;//return -2 if false
         }
     }
 
@@ -69,7 +69,7 @@ public class Students {
         } else if (Assignments.size() == 1) {
             Assignments currAssignment = currStudent.Assignments.get(0);
             overallScore = (currAssignment.getAssignmentScorePercent(currAssignment));
-            return overallScore;
+            return overallScore;//return overallScore
         }
         while (assignmentIndex < currStudent.Assignments.size()) {
             Assignments currAssignment = currStudent.Assignments.get(assignmentIndex);
@@ -78,13 +78,13 @@ public class Students {
             assignmentIndex++;
         }
         overallScore = (overallScore / Assignments.size());
-        return overallScore;
+        return overallScore;//return overallScore
     }
 
     //get assignment score:
     public double getAssignmentScorePercent(String assignmentName) {
         if (Assignments.size() == 0){
-            return -5;
+            return -5;//return -5 if false
         }
         int assignmentIndex = getAssignmentIndexByAssignmentName(assignmentName);
         if (assignmentIndex != -1) {//if assignment exists...
@@ -115,10 +115,10 @@ public class Students {
             index++;
         }
         //if no assignment found with the given assignmentName...
-        return -1;//return -1
+        return -1;//return -1 if false
     }
 
     public String getUsername() {
-        return username;
+        return username;//return username
     }
 }

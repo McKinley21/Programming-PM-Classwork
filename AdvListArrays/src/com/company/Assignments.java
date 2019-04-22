@@ -7,9 +7,9 @@ import sun.invoke.empty.Empty;
  */
 public class Assignments {
     //Properties:
-    private String assignmentName;// assignmentName (String)
-    private int pointsPossible;// pointsPossible (int)
-    private int pointsEarned;// pointsEarned (int)
+    private String assignmentName;//assignmentName (String)
+    private int pointsPossible;//pointsPossible (int)
+    private int pointsEarned;//pointsEarned (int)
 
     //Constructors:
     public Assignments(String assignmentName, int pointsPossible) {
@@ -33,15 +33,15 @@ public class Assignments {
     public double getAssignmentScorePercent(Assignments searchedAssignment) {
         double score = ((double) searchedAssignment.pointsEarned / searchedAssignment.pointsPossible);
         double scorePercent = (score * 100);
-        return scorePercent;
+        return scorePercent;//return score percent
     }
 
     //other methods:
     public String getAssignmentName() {
-        return assignmentName;
+        return assignmentName;//return assignmentName
     }
 
     public int getPointsPossible() {
-        return pointsPossible;
+        return pointsPossible;//return pointsPossible
     }
 }

@@ -7,9 +7,9 @@ import java.util.ArrayList;
  */
 public class Gradebook {
     //Properties:
-    private ArrayList<Sections> Sections;// Sections (Array)
-    // create Sections class
-    private String CurrentSection;// CurrentSection (String)
+    private ArrayList<Sections> Sections;//Sections (Array)
+        //create Sections class
+    private String CurrentSection;//CurrentSection (String)
 
     //Constructors:
     public Gradebook() {
@@ -57,7 +57,7 @@ public class Gradebook {
             return -2;//return -2 if false
         }
         int retVal = currSection.addStudent(firstName, lastName, username, phoneNumber);//add student to active section
-        return retVal;
+        return retVal;//return retval
     }
 
     //add assignment to student
@@ -70,7 +70,7 @@ public class Gradebook {
             return -2;//return -2 if false
         }
         int retVal = currSection.addAssignmentToStudent(username, assignmentName, pointsPossible);//add assignment to the specified student
-        return retVal;
+        return retVal;//return retVal
     }
 
     //add assignment to section
@@ -83,7 +83,7 @@ public class Gradebook {
             return -3;//return -3 if false
         }
         int retVal = currSection.addAssignmentToSection(currSection, assignmentName, pointsPossible);//add assignment to the specified section
-        return retVal;
+        return retVal;//return retVal
     }
 
     //set score
@@ -96,7 +96,7 @@ public class Gradebook {
             return -4;//return -4 if false
         }
         int retVal = currSection.setScore(username, assignmentName, pointsEarned);//add assignment to the specified section
-        return retVal;
+        return retVal;//return retVal
     }
 
     //mark tardy
@@ -130,7 +130,7 @@ public class Gradebook {
         }
         Sections currSection = getCurrentSection();//get current section
         if (currSection == null) {//if the currSection == null...
-            return -2;//return false
+            return -2;//return -2 if false
         }
         return currSection.getOverallScore(username);//get the specified student's overall score
     }
@@ -142,7 +142,7 @@ public class Gradebook {
         }
         Sections currSection = getCurrentSection();//get current section
         if (currSection == null) {//if the currSection == null...
-            return -2;//return false
+            return -2;//return -2 if false
         }
         int sectionIndex = getSectionIndexBySectionName(sectionName);
         if (sectionIndex == -1) {//if sectionName not found...
@@ -150,7 +150,7 @@ public class Gradebook {
         } else {//if sectionName is found...
             double overallScoreAvg = currSection.getOverallScoreAvg(currSection);//get the specified section's overall score
             System.out.println(sectionName + "'s Overall Score Avg: " + overallScoreAvg + "%");
-            return 1;
+            return 1;//return 1 if true
         }
     }
 
@@ -173,7 +173,7 @@ public class Gradebook {
         }
         Sections currSection = getCurrentSection();//get current section
         if (currSection == null) {//if the currSection == null...
-            return -4;//return false
+            return -4;//return -4 if false
         }
         int sectionIndex = getSectionIndexBySectionName(sectionName);
         if (sectionIndex == -1) {//if sectionName not found...
@@ -181,16 +181,16 @@ public class Gradebook {
         } else {//if sectionName is found...
             double assignmentScoreAvg = currSection.getAssignmentScoreAvg(currSection, assignmentName);//get the specified section's overall score
             if (assignmentScoreAvg == -5) {
-                return 0;
+                return 0;//return 0 if false
             }
             if (assignmentScoreAvg == -2) {
-                return -2;
+                return -2;//return -2 if false
             }
             System.out.println(sectionName + "'s Avg " + assignmentName + " score: " + assignmentScoreAvg + "%");
             if (assignmentScoreAvg == 0){
-                return -3;
+                return -3;//return -3 if false
             }
-            return 1;
+            return 1;//return 1 if true
         }
     }
 
@@ -246,5 +246,5 @@ public class Gradebook {
 
     public String getCurrentSectionName() {
         return CurrentSection;
-    }
+    }//get the name of the current section
 }

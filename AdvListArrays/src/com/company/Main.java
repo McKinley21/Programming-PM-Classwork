@@ -18,11 +18,11 @@ public class Main {
             System.out.println("mark tardy");
             System.out.println("mark absent");
             System.out.println("get overall score");
-            System.out.println("get overall score avg");//10
-            System.out.println("get assignment score");//11
-            System.out.println("get assignment score avg");//12
-            System.out.println("get tardy count");//13
-            System.out.println("get absent count");//14
+            System.out.println("get overall score avg");
+            System.out.println("get assignment score");
+            System.out.println("get assignment score avg");
+            System.out.println("get tardy count");
+            System.out.println("get absent count");
             String command = console.nextLine();
             if (command.equals("change section")) {//change section
                 System.out.println("Enter Section Name:");
@@ -335,13 +335,13 @@ public class Main {
                     System.out.println("Enter Student Username:");
                     String username = console.nextLine();
                     int getTardyCount = Gradebook.getTardyCount(username);
-                    if (getTardyCount > -1) {
+                    if (getTardyCount > -1) {//true
                         System.out.println(username + "'s tardy count: " + getTardyCount);
                         break;
-                    } else if (getTardyCount == -1) {
+                    } else if (getTardyCount == -1) {//false
                         System.out.println("Can't get a student's tardy count(There are 0 students to get it from).");
                         break;
-                    } else if (getTardyCount == -2) {
+                    } else if (getTardyCount == -2) {//false
                         System.out.println(username + " not found.");
                         continue;
                     }
@@ -353,13 +353,13 @@ public class Main {
                     System.out.println("Enter Student Username:");
                     String username = console.nextLine();
                     int getAbsentCount = Gradebook.getAbsentCount(username);
-                    if (getAbsentCount > -1) {
+                    if (getAbsentCount > -1) {//true
                         System.out.println(username + "'s tardy count: " + getAbsentCount);
                         break;
-                    } else if (getAbsentCount == -1) {
+                    } else if (getAbsentCount == -1) {//false
                         System.out.println("Can't get a student's tardy count(There are 0 students to get it from).");
                         break;
-                    } else if (getAbsentCount == -2) {
+                    } else if (getAbsentCount == -2) {//false
                         System.out.println(username + " not found.");
                         continue;
                     }

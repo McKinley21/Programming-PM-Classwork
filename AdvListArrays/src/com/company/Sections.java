@@ -7,9 +7,9 @@ import java.util.ArrayList;
  */
 public class Sections {
     //Properties:
-    private ArrayList<Students> Students;// Students (List)
-    //create Students class
-    private String sectionName;// sectionName (String)
+    private ArrayList<Students> Students;//Students (List)
+        //create Students class
+    private String sectionName;//sectionName (String)
 
     //Constructors:
     public Sections(String sectionName) {
@@ -22,10 +22,10 @@ public class Sections {
     public int addStudent(String firstName, String lastName, String username, long phoneNumber) {
         int studentIndex = getStudentIndexByUsername(username);
         if (studentIndex != -1) {//if username exists...
-            return -1;//return false
+            return -1;//return -1 if false
         } else {//else...
             Students.add(new Students(firstName, lastName, username, phoneNumber));//create new student and add to students list
-            return 1;//return true
+            return 1;//return 1 if true
         }
     }
 
@@ -34,14 +34,15 @@ public class Sections {
         Students currStudent = getCurrentStudent(username);//get the student specified by username
         int addAssignment = 0;
         if (currStudent == null) {//if student not found...
-            return 0;//return false
+            return 0;//return 0 if false
         } else {//else...
             boolean bool = currStudent.addAssignmentToStudent(assignmentName, pointsPossible);//add a assignment to the specified student
             if (bool = false) {
                 addAssignment = -1;
+                return addAssignment;//return -1 if false
             } else {
+                return 1;//return 1 if true
             }
-            return 1;
         }
     }
 
@@ -92,7 +93,7 @@ public class Sections {
             return -1;//return -1 if false
         } else {//else...
             currStudent.markAbsent();//add 1 to the specified student's absent count(mark as absent)
-            return 1;//return if true
+            return 1;//return 1 if true
         }
     }
 
@@ -130,11 +131,11 @@ public class Sections {
         } else {//else...
             double assignmentScorePercent = currStudent.getAssignmentScorePercent(assignmentName);//get the assignment score as a percentage for specified student
             if (assignmentScorePercent == -2){
-                return -2;
+                return -2;//return -2 if false
             }
             System.out.println(username + "'s " + assignmentName +" Score: " + assignmentScorePercent + "%");
             if (assignmentScorePercent == 0){
-                return -3;
+                return -3;//return -3 if false
             }
             return 1;//return 1 if true
         }
@@ -148,7 +149,7 @@ public class Sections {
             Students currStudent = currSection.Students.get(studentIndex);
             double currStudentAssignmentScorePercent = currStudent.getAssignmentScorePercent(assignmentName);
             if (currStudentAssignmentScorePercent == -5) {
-                return -5;
+                return -5;//return -5 if false
             }
             if (currStudentAssignmentScorePercent == -2){
                 assignmentScoreAvg = -2;
@@ -158,7 +159,7 @@ public class Sections {
             studentIndex++;
         }
         assignmentScoreAvg = (assignmentScoreAvg / Students.size());
-        return assignmentScoreAvg;
+        return assignmentScoreAvg;//return assignmentScoreAvg
     }
 
     //get tardy count:
@@ -169,7 +170,7 @@ public class Sections {
             return tardyCount;//return tardyCount
         } else {//else...
             int tardyCount = currStudent.getDaysTardy();//get the specified student's tardy count
-            return tardyCount;
+            return tardyCount;//return tardy count
         }
     }
 
@@ -181,7 +182,7 @@ public class Sections {
             return absentCount;//return absentCount
         } else {//else...
             int absentCount = currStudent.getDaysAbsent();//get the specified student's absent count
-            return absentCount;
+            return absentCount;//return absentCount
         }
     }
 
